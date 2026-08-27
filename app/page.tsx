@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, type CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 
 const slides = [
   { eyebrow: '01 / PERFORMANCE', title: <>PURE VEGAN<br />PROTEIN<br /><em>WITH CREATINE</em></>, text: <>Build lean muscle. Get stronger.<br />Every. Single. Day.</>, bg: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2200&q=85' },
@@ -33,6 +33,11 @@ export default function Home() {
   const slide = slides[active]
   const next = () => setActive((active + 1) % slides.length)
   const prev = () => setActive((active - 1 + slides.length) % slides.length)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => setActive((current) => (current + 1) % slides.length), 6500)
+    return () => window.clearInterval(timer)
+  }, [])
 
   return <main>
     <div className="top"><span>FREE SHIPPING ON ORDERS ABOVE ₹999</span><span>🌿 100% PLANT-BASED</span><span>NO CHEMICALS</span><span>NO PRESERVATIVES</span><span>NO COLOURS</span><span>PURE VEGAN</span></div>
