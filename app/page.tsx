@@ -1,62 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 
 const slides = [
-  {
-    eyebrow: '01 / PERFORMANCE',
-    title: <>PURE VEGAN<br />PROTEIN<br /><em>WITH CREATINE</em></>,
-    text: <>Build lean muscle. Get stronger.<br />Every. Single. Day.</>,
-    bg: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '02 / ENERGY',
-    title: <>NATURAL<br />ENERGY<br /><em>THAT LASTS</em></>,
-    text: <>Plant-powered fuel for busy days.<br />Keep moving. Keep going.</>,
-    bg: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '03 / FOCUS',
-    title: <>BRAIN BOOSTER<br /><em>FOR KIDS &amp;<br />ADULTS</em></>,
-    text: <>Clean everyday nutrition for<br />a sharper daily routine.</>,
-    bg: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '04 / HYDRATION',
-    title: <>STAY HYDRATED<br /><em>PERFORM<br />BETTER</em></>,
-    text: <>Simple hydration designed<br />for your everyday movement.</>,
-    bg: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '05 / BALANCE',
-    title: <>SUGAR CONTROL<br /><em>NATURALLY</em></>,
-    text: <>Everyday plant-powered support<br />without unnecessary extras.</>,
-    bg: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '06 / WELLNESS',
-    title: <>WHOLE BODY<br /><em>WELLNESS<br />EVERY DAY</em></>,
-    text: <>Clean nutrition made for<br />your complete daily routine.</>,
-    bg: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2200&q=85',
-  },
-  {
-    eyebrow: '07 / PERFORMANCE',
-    title: <>THE COMPLETE<br />DC RANGE<br /><em>FOR YOU</em></>,
-    text: <>Build lean muscle. Get stronger.<br />Every. Single. Day.</>,
-    bg: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=2200&q=85',
-  },
+  { eyebrow: '01 / PERFORMANCE', title: <>PURE VEGAN<br />PROTEIN<br /><em>WITH CREATINE</em></>, text: <>Build lean muscle. Get stronger.<br />Every. Single. Day.</>, bg: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '02 / ENERGY', title: <>NATURAL<br />ENERGY<br /><em>THAT LASTS</em></>, text: <>Plant-powered fuel for busy days.<br />Keep moving. Keep going.</>, bg: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '03 / FOCUS', title: <>BRAIN BOOSTER<br /><em>FOR KIDS &amp;<br />ADULTS</em></>, text: <>Clean everyday nutrition for<br />a sharper daily routine.</>, bg: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '04 / HYDRATION', title: <>STAY HYDRATED<br /><em>PERFORM<br />BETTER</em></>, text: <>Simple hydration designed<br />for your everyday movement.</>, bg: 'https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '05 / BALANCE', title: <>SUGAR CONTROL<br /><em>NATURALLY</em></>, text: <>Everyday plant-powered support<br />without unnecessary extras.</>, bg: 'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '06 / WELLNESS', title: <>WHOLE BODY<br /><em>WELLNESS<br />EVERY DAY</em></>, text: <>Clean nutrition made for<br />your complete daily routine.</>, bg: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2200&q=85' },
+  { eyebrow: '07 / PERFORMANCE', title: <>THE COMPLETE<br />DC RANGE<br /><em>FOR YOU</em></>, text: <>Build lean muscle. Get stronger.<br />Every. Single. Day.</>, bg: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=2200&q=85' },
 ]
 
 const rail = [
-  ['PURE VEGAN', 'PROTEIN', 'WITH CREATINE', 'photo-1534438327276-14e5300c3a48'],
-  ['NATURAL', 'ENERGY', 'THAT LASTS', 'photo-1571019613454-1cb2f99b2d8b'],
-  ['BRAIN BOOSTER', 'FOR KIDS &', 'ADULTS', 'photo-1505751172876-fa1923c5c528'],
-  ['STAY HYDRATED', 'PERFORM', 'BETTER', 'photo-1523362628745-0c100150b504'],
-  ['SUGAR CONTROL', 'NATURALLY', '', 'photo-1547592180-85f173990554'],
-  ['WHOLE BODY', 'WELLNESS', 'EVERY DAY', 'photo-1518611012118-696072aa579a'],
-  ['THE COMPLETE', 'DC RANGE', 'FOR YOU', 'photo-1583454110551-21f2fa2afe61'],
+  ['PURE VEGAN', 'PROTEIN', 'WITH CREATINE', 'photo-1534438327276-14e5300c3a48'], ['NATURAL', 'ENERGY', 'THAT LASTS', 'photo-1571019613454-1cb2f99b2d8b'], ['BRAIN BOOSTER', 'FOR KIDS &', 'ADULTS', 'photo-1505751172876-fa1923c5c528'], ['STAY HYDRATED', 'PERFORM', 'BETTER', 'photo-1523362628745-0c100150b504'], ['SUGAR CONTROL', 'NATURALLY', '', 'photo-1547592180-85f173990554'], ['WHOLE BODY', 'WELLNESS', 'EVERY DAY', 'photo-1518611012118-696072aa579a'], ['THE COMPLETE', 'DC RANGE', 'FOR YOU', 'photo-1583454110551-21f2fa2afe61'],
 ]
-
 const products = ['DC PLANT PROTEIN', 'DC ENERGY', 'DC PRE-WORKOUT', 'DC HYDRATION', 'DC BRAIN BOOSTER', 'DC SUGAR CONTROL']
 const productColors = ['#c8ef00', '#c8ef00', '#c8ef00', '#27a7e7', '#c8ef00', '#c8ef00']
 const categories = [
@@ -64,12 +22,10 @@ const categories = [
 ]
 const ingredients = ['PEA PROTEIN', 'MORINGA', 'MACA ROOT', 'FLAXSEED', 'OATS', 'AMLA', 'BEETROOT', 'ASHWAGANDHA']
 
-function Logo() {
-  return <div className="logo"><strong>DC</strong><span>DAILY<br />CONSUMABLES</span></div>
-}
+function Logo() { return <div className="logo"><strong>DC</strong><span>DAILY<br />CONSUMABLES</span></div> }
 
 function Pouch({ accent = '#c8ef00', label = 'PLANT PROTEIN' }: { accent?: string; label?: string }) {
-  return <div className="pouch" style={{ '--accent': accent } as React.CSSProperties}><div className="pouch-logo">DC</div><small>DAILY CONSUMABLES</small><div className="pouch-name">{label}</div><div className="pouch-line" /><b>25g &nbsp; 3g &nbsp; 0g<br /><span style={{fontSize: '5px'}}>PROTEIN &nbsp; CREATINE &nbsp; SUGAR</span></b><div className="pouch-bottom">CHOCOLATE FLAVOUR</div></div>
+  return <div className="pouch" style={{ '--accent': accent } as CSSProperties}><div className="pouch-logo">DC</div><small>DAILY CONSUMABLES</small><div className="pouch-name">{label}</div><div className="pouch-line" /><b>25g &nbsp; 3g &nbsp; 0g<br /><span style={{ fontSize: '5px' }}>PROTEIN &nbsp; CREATINE &nbsp; SUGAR</span></b><div className="pouch-bottom">CHOCOLATE FLAVOUR</div></div>
 }
 
 export default function Home() {
@@ -83,7 +39,7 @@ export default function Home() {
     <header><Logo /><nav><a>SHOP⌄</a><a>THE DAILY 5</a><a>FIND YOUR FLEX <i>AI</i></a><a>ABOUT DC</a><a>BLOGS</a><a>REWARDS</a></nav><div className="actions">⌕　♙　🛒</div></header>
 
     <section className="hero">
-      <div className="hero-bg" style={{ transform: `translateX(-${active * 14.2857}%)` }}>{slides.map((s, i) => <div className="hero-photo" key={s.eyebrow} style={{ backgroundImage: `url(${s.bg})` }}><div className="overlay" /></div>)}</div>
+      <div className="hero-bg" style={{ transform: `translateX(-${active * 14.2857}%)` }}>{slides.map((s) => <div className="hero-photo" key={s.eyebrow} style={{ backgroundImage: `url(${s.bg})` }}><div className="overlay" /></div>)}</div>
       <button className="arrow l" onClick={prev} aria-label="Previous slide">‹</button><button className="arrow r" onClick={next} aria-label="Next slide">›</button>
       <div className="hero-copy"><small>{slide.eyebrow}</small><h1>{slide.title}</h1><p>{slide.text}</p><button>SHOP NOW →</button><button className="ghost">VIEW PRODUCT</button></div>
       <div className="dots">{slides.map((_, i) => <button key={i} className={i === active ? 'on' : ''} onClick={() => setActive(i)} aria-label={`Go to slide ${i + 1}`} />)}</div>
