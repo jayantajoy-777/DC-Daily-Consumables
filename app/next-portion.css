@@ -1,0 +1,41 @@
+/* DC next homepage portion: The DC Standard sits directly below Shop By Need */
+main{display:flex;flex-direction:column}
+main>.announcement{order:1}
+main>.nav{order:2}
+main>.hero{order:3}
+main>.wellness-strip{order:4}
+main>.ingredients-band{order:5}
+main>.collection{order:6}
+main>.how{order:7}
+main>.life{order:8}
+main>.trust{order:9}
+main>.closing{order:10}
+main>footer{order:11}
+
+/* The reference section is a light, editorial split banner rather than the old dark ingredient grid. */
+.ingredients-band{position:relative;background:#f0f1e5!important;color:#171714!important;padding:0!important;margin:0 auto 10px!important;width:min(1400px,calc(100% - 72px));border-radius:22px;overflow:hidden;min-height:205px;background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1800&q=90')!important;background-size:68% 100%!important;background-position:right center!important;background-repeat:no-repeat!important}
+.ingredients-band:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#eef0df 0%,#eef0df 31%,rgba(238,240,223,.88) 43%,rgba(238,240,223,.08) 67%,rgba(238,240,223,0) 100%);pointer-events:none}
+.ingredients-band .ingredient-layout{position:relative;z-index:1;display:block!important;min-height:205px;padding:26px 0 25px!important}
+.ingredients-band .ingredient-copy{width:38%;padding-left:26px!important}
+.ingredients-band .ingredient-copy .eyebrow{font-size:10px!important;letter-spacing:.15em!important;margin-bottom:7px!important;color:#71851d!important}
+.ingredients-band .ingredient-copy .eyebrow{font-size:0!important}
+.ingredients-band .ingredient-copy .eyebrow:after{content:'THE DC STANDARD';font-size:10px}
+.ingredients-band .ingredient-copy h2{font-family:'Space Grotesk'!important;font-size:clamp(28px,3.2vw,40px)!important;line-height:.94!important;letter-spacing:-.05em!important;margin:0 0 10px!important;color:#171714!important}
+.ingredients-band .ingredient-copy h2 em{display:none!important}
+.ingredients-band .ingredient-copy h2{font-size:0!important}
+.ingredients-band .ingredient-copy h2:after{content:'Real Ingredients.\A Real Nutrition.';white-space:pre;display:block;font-size:clamp(28px,3.2vw,40px);line-height:.94}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:11px!important;line-height:1.4!important;color:#56544c!important;max-width:310px!important;margin:0 0 14px!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:0!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow):after{content:'We use real, whole-food ingredients packed with natural goodness.';font-size:11px}
+.ingredients-band .btn.light{background:#82a91c!important;color:#fff!important;border-radius:999px!important;padding:10px 15px!important;font-size:9px!important}
+.ingredients-band .ingredient-grid{display:none!important}
+
+@media(max-width:700px){
+  .ingredients-band{width:calc(100% - 28px)!important;border-radius:18px!important;min-height:190px!important;background-size:72% 100%!important;background-position:right center!important;margin-bottom:12px!important}
+  .ingredients-band:after{background:linear-gradient(90deg,#eef0df 0%,#eef0df 42%,rgba(238,240,223,.9) 55%,rgba(238,240,223,.15) 78%,rgba(238,240,223,0) 100%)}
+  .ingredients-band .ingredient-layout{min-height:190px!important;padding:23px 0!important}
+  .ingredients-band .ingredient-copy{width:54%!important;padding-left:18px!important}
+  .ingredients-band .ingredient-copy h2:after{font-size:25px!important}
+  .ingredients-band .ingredient-copy>p:not(.eyebrow):after{font-size:9px!important}
+  .ingredients-band .btn.light{font-size:8px!important;padding:8px 12px!important}
+}
