@@ -12,16 +12,16 @@ const ingredients = [
 ];
 
 const wellnessCategories = [
-  ['☀', 'DAILY', 'Everyday nutrition', 'linear-gradient(135deg,#dff0b0,#9ac33b)'],
-  ['⚡', 'FIT', 'Strength & performance', 'linear-gradient(135deg,#d8e8ff,#5f8ee8)'],
-  ['☕', 'RITUAL', 'Daily rituals', 'linear-gradient(135deg,#ffd9c5,#ee8050)'],
-  ['✦', 'BODY', 'Body wellness', 'linear-gradient(135deg,#e4d5f5,#9d73c8)'],
-  ['◉', 'BRAIN', 'Focus & clarity', 'linear-gradient(135deg,#cfe9ec,#3e9ca7)'],
-  ['☾', 'SLEEP', 'Better sleep', 'linear-gradient(135deg,#d9d7ee,#7771b4)'],
-  ['◍', 'SUGAR', 'Sugar management', 'linear-gradient(135deg,#f8d7e2,#e66b86)'],
-  ['♡', 'CHOLESTEROL', 'Heart health', 'linear-gradient(135deg,#f6d6d2,#dc7168)'],
-  ['♢', 'BONE', 'Bone strength', 'linear-gradient(135deg,#ead9c7,#b88755)'],
-  ['✿', 'BEAUTY', 'Glow from within', 'linear-gradient(135deg,#f6d4e7,#d875a9)'],
+  ['☀️', 'DAILY', 'Everyday nutrition', 'linear-gradient(135deg,#fff3c9,#f6d97c)'],
+  ['🏋️', 'FIT', 'Strength & performance', 'linear-gradient(135deg,#e1ebff,#a9c4f4)'],
+  ['☕', 'RITUAL', 'Daily rituals', 'linear-gradient(135deg,#ffe3d5,#f4b28f)'],
+  ['🧘', 'BODY', 'Body wellness', 'linear-gradient(135deg,#e6ddf3,#c4acd9)'],
+  ['🧠', 'BRAIN', 'Focus & clarity', 'linear-gradient(135deg,#dceff1,#a7d5da)'],
+  ['🌙', 'SLEEP', 'Better sleep', 'linear-gradient(135deg,#e4e1f3,#b8b4dc)'],
+  ['💧', 'SUGAR', 'Sugar management', 'linear-gradient(135deg,#f9dfe6,#efacbd)'],
+  ['♡', 'CHOLESTEROL', 'Heart health', 'linear-gradient(135deg,#f8dedd,#efaaa5)'],
+  ['🦴', 'BONE', 'Bone strength', 'linear-gradient(135deg,#eee2d4,#d2b493)'],
+  ['🌸', 'BEAUTY', 'Glow from within', 'linear-gradient(135deg,#f7dce9,#e9b0cc)'],
 ];
 
 function Pouch({ product, hero = false }: { product: typeof products[number]; hero?: boolean }) {
@@ -55,11 +55,11 @@ export default function Home() {
         <div><p className="eyebrow" style={{marginBottom:'2px'}}>SHOP BY NEED</p><h2 style={{margin:0,fontSize:'clamp(22px,3vw,34px)',lineHeight:1}}>YOUR DAILY <em>FLEX.</em></h2></div>
         <a className="text-link" href="#collection" style={{whiteSpace:'nowrap'}}>VIEW ALL →</a>
       </div>
-      <div style={{display:'flex',gap:'10px',overflowX:'auto',paddingBottom:'4px',scrollbarWidth:'none'}}>
-        {wellnessCategories.map(([icon,name,sub,bg]) => <a href="#collection" key={name} style={{flex:'0 0 auto',width:'108px',textDecoration:'none',color:'inherit'}}>
-          <div style={{height:'78px',borderRadius:'16px',background:bg,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'31px',fontWeight:700,boxShadow:'inset 0 0 0 1px rgba(0,0,0,.06)'}}>{icon}</div>
-          <b style={{display:'block',fontSize:'11px',letterSpacing:'.08em',marginTop:'7px'}}>{name}</b>
-          <span style={{display:'block',fontSize:'10px',lineHeight:1.2,opacity:.62,marginTop:'3px'}}>{sub}</span>
+      <div style={{display:'flex',gap:'8px',overflowX:'auto',paddingBottom:'4px',scrollbarWidth:'none'}}>
+        {wellnessCategories.map(([icon,name,sub,bg]) => <a href="#collection" key={name} style={{flex:'0 0 auto',width:'82px',textDecoration:'none',color:'inherit'}}>
+          <div style={{height:'60px',borderRadius:'14px',background:bg,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'24px',fontWeight:700,boxShadow:'inset 0 0 0 1px rgba(0,0,0,.06)'}}>{icon}</div>
+          <b style={{display:'block',fontSize:'9px',letterSpacing:'.07em',marginTop:'6px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{name}</b>
+          <span style={{display:'block',fontSize:'8px',lineHeight:1.2,opacity:.62,marginTop:'2px'}}>{sub}</span>
         </a>)}
       </div>
     </section>
