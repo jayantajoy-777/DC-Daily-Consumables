@@ -1,3 +1,23 @@
-/* DC hero flow fix: the visual campaign is the only homepage hero. Hide the legacy hero markup so it cannot duplicate or push/cover content. */
+/* DC hero flow fix: keep the global visual slideshow, but place it AFTER the announcement + navigation and BEFORE homepage content. */
 .hero{display:none!important}
-.dc-showcase{display:block!important;position:relative!important;top:auto!important;left:auto!important;transform:none!important}
+
+/* HeroShowcase is mounted by the root layout before <main>. Flatten main so its
+   announcement/header/sections can participate in the same visual flow. */
+body{display:flex!important;flex-direction:column!important;min-width:0}
+main{display:contents!important}
+
+.announcement{order:1!important}
+.nav{order:2!important}
+.dc-showcase{order:3!important;display:block!important;position:relative!important;top:auto!important;left:auto!important;transform:none!important}
+.standard{order:4!important}
+.collection{order:5!important}
+.ingredients-band{order:6!important}
+.how{order:7!important}
+.life{order:8!important}
+.trust{order:9!important}
+.closing{order:10!important}
+footer{order:11!important}
+
+/* Make sure the showcase is never painted underneath the header. */
+.nav{position:relative!important;z-index:50!important}
+.dc-showcase{z-index:20!important}
