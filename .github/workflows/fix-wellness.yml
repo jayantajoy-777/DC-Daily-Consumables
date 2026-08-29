@@ -1,0 +1,46 @@
+name: Fix Wellness Visuals
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace WellnessVisual with HD category photography
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          p=Path('app/page.tsx')
+          s=p.read_text()
+          new_fn = r'''function WellnessVisual({kind}: {kind:string}) {
+  const visuals: Record<string,string> = {
+    leaf:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=92',
+    fit:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=92',
+    ritual:'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=92',
+    body:'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=92',
+    brain:'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=92',
+    sleep:'https://images.unsplash.com/photo-1515894203077-9cd36032142f?auto=format&fit=crop&w=1200&q=92',
+    drop:'https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?auto=format&fit=crop&w=1200&q=92',
+    heart:'https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=1200&q=92',
+    bone:'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=92',
+    flower:'https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=92',
+  };
+  const src=visuals[kind] || visuals.leaf;
+  return <img src={src} alt="" loading="lazy" draggable={false} style={{width:'100%',height:'100%',display:'block',objectFit:'cover',objectPosition:'center',borderRadius:'inherit'}} />;
+}'''
+          s2=re.sub(r'function WellnessVisual\(\{kind\}: \{kind:string\}\) \{.*?\n\}\n\nfunction Pouch', new_fn+'\n\nfunction Pouch', s, flags=re.S)
+          if s2==s:
+            raise SystemExit('WellnessVisual function not found')
+          s2=s2.replace("boxShadow:'inset 0 0 0 1px rgba(30,35,20,.07),0 5px 12px rgba(40,35,20,.05)',transition:'transform .2s ease'", "boxShadow:'inset 0 0 0 1px rgba(255,255,255,.8),0 7px 18px rgba(40,35,20,.10)',transition:'transform .2s ease',overflow:'hidden',position:'relative'")
+          p.write_text(s2)
+      - name: Commit fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/page.tsx
+          git diff --cached --quiet || git commit -m "Fix wellness cards with HD nature photography"
+          git push
