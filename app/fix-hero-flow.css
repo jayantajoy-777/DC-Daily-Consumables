@@ -1,0 +1,3 @@
+/* DC hero flow fix: the visual campaign is the only homepage hero. Hide the legacy hero markup so it cannot duplicate or push/cover content. */
+.hero{display:none!important}
+.dc-showcase{display:block!important;position:relative!important;top:auto!important;left:auto!important;transform:none!important}
