@@ -6,19 +6,6 @@ const products = [
   { name: 'DC HYDRATION', sub: 'Daily Hydration Formula', price: '₹699', tone: 'blue', note: '150 g' },
 ];
 
-const categories = [
-  ['☼', 'DAILY', 'Everyday nutrition', 'sun'],
-  ['✦', 'FIT', 'Strength & performance', 'violet'],
-  ['◒', 'RITUAL', 'Daily habits', 'peach'],
-  ['♙', 'BODY', 'Body wellness', 'sage'],
-  ['◉', 'MIND', 'Mental clarity', 'sky'],
-  ['☾', 'SLEEP', 'Better sleep', 'lilac'],
-  ['◌', 'GLYCO', 'Sugar balance', 'rose'],
-  ['♡', 'LIPID', 'Heart health', 'blush'],
-  ['⌁', 'BONE', 'Bone strength', 'sand'],
-  ['✿', 'BEAUTY', 'Glow from within', 'pink'],
-];
-
 const ingredients = [
   ['PEA PROTEIN', 'peas', 'green'], ['MORINGA', 'moringa', 'leaf'], ['OATS', 'oats', 'cream'],
   ['AMLA', 'amla', 'lime'], ['FLAXSEED', 'flax', 'brown'], ['BEETROOT', 'beet', 'red'], ['ASHWAGANDHA', 'ash', 'tan'],
@@ -49,8 +36,6 @@ export default function Home() {
       <div className="hero-stage"><div className="blob blob-one"/><div className="blob blob-two"/><div className="ingredient-scene"><span className="bowl pea">●●●</span><span className="bowl greenpow">DC</span><span className="bowl berry">● ●</span><span className="leaf">⌁</span></div><div className="hero-pouches"><Pouch product={products[2]} /><Pouch product={products[0]} hero /><Pouch product={products[3]} /><Pouch product={products[4]} /></div><div className="hero-shaker">DC<span>YOUR<br/>DAILY<br/>FLEX.</span></div></div>
       <div className="hero-proof"><span>♧ <b>PLANT-BASED</b></span><span>◈ <b>PURE INGREDIENTS</b></span><span>♧ <b>NO PRESERVATIVES</b></span><span>⌁ <b>NO CHEMICALS</b></span><span>♡ <b>MADE IN INDIA</b></span></div>
     </section>
-
-    <section className="categories wrap" id="find"><div className="category-track">{categories.map(([icon, title, sub, tone]) => <a className="category" href="#collection" key={title}><span className={`cat-icon ${tone}`}>{icon}</span><b>{title}</b><small>{sub}</small></a>)}</div></section>
 
     <section className="standard wrap" id="story">
       <div className="standard-intro"><p className="eyebrow">THE DC STANDARD</p><h2>REAL<br/><em>GOODNESS.</em></h2><p>Simple formulas. Recognizable ingredients. Designed for real daily routines.</p><a href="#ingredients" className="text-link">OUR PHILOSOPHY →</a></div>
