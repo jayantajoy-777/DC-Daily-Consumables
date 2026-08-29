@@ -8,6 +8,7 @@ import './wellness-visual-lock.css';
 import './wellness-3d.css';
 import './next-portion.css';
 import './dc-standard-section.css';
+import './force-home-order.css';
 import HeroShowcase from './components/HeroShowcase';
 export const metadata: Metadata = { title: 'DC | Daily Consumables', description: 'YOUR DAILY FLEX.' };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) { return <html lang="en"><body><HeroShowcase />{children}</body></html>; }
