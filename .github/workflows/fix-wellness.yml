@@ -44,3 +44,5 @@ jobs:
           git add app/page.tsx
           git diff --cached --quiet || git commit -m "Fix wellness cards with HD nature photography"
           git push
+      - name: Verification marker
+        run: echo "HD wellness visual fix workflow completed"
