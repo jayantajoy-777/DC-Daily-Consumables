@@ -1,0 +1,36 @@
+/* DC target section: category tiles -> DC Standard -> collection */
+main{display:flex;flex-direction:column}
+main>.announcement{order:1}
+main>header.nav{order:2}
+main>.hero{order:3}
+main>.wellness-strip{order:4}
+main>.ingredients-band{order:5}
+main>.collection{order:6}
+main>.how{order:7}
+main>.life{order:8}
+main>.trust{order:9}
+main>.closing{order:10}
+main>footer{order:11}
+
+/* Match only the circled reference section: clean split banner, no stacked layers. */
+.ingredients-band{display:block!important;background:transparent!important;padding:0!important;margin:0 auto 18px!important;width:min(100% - 24px, 1200px)!important}
+.ingredients-band .ingredient-layout{display:grid!important;grid-template-columns:30% 70%!important;min-height:210px!important;height:210px!important;border-radius:18px!important;overflow:hidden!important;background:#eef2e4!important;box-shadow:none!important;padding:0!important}
+.ingredients-band .ingredient-copy{padding:26px 24px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;background:#eef2e4!important;min-width:0!important}
+.ingredients-band .ingredient-copy .eyebrow{margin:0 0 5px!important;font-size:12px!important;letter-spacing:.16em!important}
+.ingredients-band .ingredient-copy h2{margin:0 0 10px!important;font-size:clamp(24px,3vw,38px)!important;line-height:.98!important;letter-spacing:-.035em!important}
+.ingredients-band .ingredient-copy h2 em{font-style:normal!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){margin:0 0 14px!important;font-size:13px!important;line-height:1.35!important;max-width:290px!important}
+.ingredients-band .ingredient-copy .btn{align-self:flex-start!important;padding:10px 15px!important;font-size:10px!important}
+.ingredients-band .ingredient-grid{display:block!important;min-height:210px!important;height:210px!important;background:url('/dc-wellness.jpg') center/cover no-repeat!important;padding:0!important;font-size:0!important}
+.ingredients-band .ingredient-grid>*{display:none!important}
+
+@media(max-width:700px){
+  .ingredients-band{width:calc(100% - 24px)!important;margin-bottom:18px!important}
+  .ingredients-band .ingredient-layout{grid-template-columns:34% 66%!important;height:250px!important;min-height:250px!important;border-radius:18px!important}
+  .ingredients-band .ingredient-copy{padding:20px 14px!important}
+  .ingredients-band .ingredient-copy .eyebrow{font-size:9px!important;line-height:1.25!important;max-width:95px!important}
+  .ingredients-band .ingredient-copy h2{font-size:25px!important;line-height:.96!important;margin-bottom:9px!important}
+  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:10px!important;line-height:1.35!important;margin-bottom:10px!important}
+  .ingredients-band .ingredient-copy .btn{font-size:8px!important;padding:9px 10px!important;border-radius:20px!important}
+  .ingredients-band .ingredient-grid{height:250px!important;min-height:250px!important;background-position:center!important}
+}
