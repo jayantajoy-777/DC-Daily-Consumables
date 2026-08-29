@@ -11,6 +11,19 @@ const ingredients = [
   ['AMLA', 'amla', 'lime'], ['FLAXSEED', 'flax', 'brown'], ['BEETROOT', 'beet', 'red'], ['ASHWAGANDHA', 'ash', 'tan'],
 ];
 
+const wellnessCategories = [
+  ['☀', 'DAILY', 'Everyday nutrition', 'linear-gradient(135deg,#dff0b0,#9ac33b)'],
+  ['⚡', 'FIT', 'Strength & performance', 'linear-gradient(135deg,#d8e8ff,#5f8ee8)'],
+  ['☕', 'RITUAL', 'Daily rituals', 'linear-gradient(135deg,#ffd9c5,#ee8050)'],
+  ['✦', 'BODY', 'Body wellness', 'linear-gradient(135deg,#e4d5f5,#9d73c8)'],
+  ['◉', 'BRAIN', 'Focus & clarity', 'linear-gradient(135deg,#cfe9ec,#3e9ca7)'],
+  ['☾', 'SLEEP', 'Better sleep', 'linear-gradient(135deg,#d9d7ee,#7771b4)'],
+  ['◍', 'SUGAR', 'Sugar management', 'linear-gradient(135deg,#f8d7e2,#e66b86)'],
+  ['♡', 'CHOLESTEROL', 'Heart health', 'linear-gradient(135deg,#f6d6d2,#dc7168)'],
+  ['♢', 'BONE', 'Bone strength', 'linear-gradient(135deg,#ead9c7,#b88755)'],
+  ['✿', 'BEAUTY', 'Glow from within', 'linear-gradient(135deg,#f6d4e7,#d875a9)'],
+];
+
 function Pouch({ product, hero = false }: { product: typeof products[number]; hero?: boolean }) {
   return <div className={`pouch ${product.tone} ${hero ? 'hero-pouch' : ''}`}>
     <div className="pouch-top">DC <span>DAILY CONSUMABLES</span></div>
@@ -37,12 +50,18 @@ export default function Home() {
       <div className="hero-proof"><span>♧ <b>PLANT-BASED</b></span><span>◈ <b>PURE INGREDIENTS</b></span><span>♧ <b>NO PRESERVATIVES</b></span><span>⌁ <b>NO CHEMICALS</b></span><span>♡ <b>MADE IN INDIA</b></span></div>
     </section>
 
-    <section className="standard wrap" id="story">
-      <div className="standard-intro"><p className="eyebrow">THE DC STANDARD</p><h2>REAL<br/><em>GOODNESS.</em></h2><p>Simple formulas. Recognizable ingredients. Designed for real daily routines.</p><a href="#ingredients" className="text-link">OUR PHILOSOPHY →</a></div>
-      <div className="standard-card mint"><span>01</span><h3>PLANT-BASED</h3><p>Formulas built around plant-based ingredients and everyday nutrition.</p><div className="visual peas">●●●</div></div>
-      <div className="standard-card peach"><span>02</span><h3>NO COMPROMISE</h3><p>No unnecessary clutter. No filler-first thinking. Just purposeful formulas.</p><div className="visual nuts">● • ●</div></div>
-      <div className="standard-card sky"><span>03</span><h3>REAL SUPERFOODS</h3><p>Ingredients people recognize, selected for everyday use.</p><div className="visual berries">● ● ●</div></div>
-      <div className="standard-card yellow"><span>04</span><h3>MADE FOR REAL LIFE</h3><p>Simple formats that fit mornings, work, travel and training.</p><div className="mini-shaker">DC</div></div>
+    <section className="wellness-strip wrap" id="story" aria-label="Shop by wellness goal" style={{marginTop:'12px',marginBottom:'20px'}}>
+      <div style={{display:'flex',alignItems:'end',justifyContent:'space-between',gap:'16px',marginBottom:'10px'}}>
+        <div><p className="eyebrow" style={{marginBottom:'2px'}}>SHOP BY NEED</p><h2 style={{margin:0,fontSize:'clamp(22px,3vw,34px)',lineHeight:1}}>YOUR DAILY <em>FLEX.</em></h2></div>
+        <a className="text-link" href="#collection" style={{whiteSpace:'nowrap'}}>VIEW ALL →</a>
+      </div>
+      <div style={{display:'flex',gap:'10px',overflowX:'auto',paddingBottom:'4px',scrollbarWidth:'none'}}>
+        {wellnessCategories.map(([icon,name,sub,bg]) => <a href="#collection" key={name} style={{flex:'0 0 auto',width:'108px',textDecoration:'none',color:'inherit'}}>
+          <div style={{height:'78px',borderRadius:'16px',background:bg,display:'flex',alignItems:'center',justifyContent:'center',fontSize:'31px',fontWeight:700,boxShadow:'inset 0 0 0 1px rgba(0,0,0,.06)'}}>{icon}</div>
+          <b style={{display:'block',fontSize:'11px',letterSpacing:'.08em',marginTop:'7px'}}>{name}</b>
+          <span style={{display:'block',fontSize:'10px',lineHeight:1.2,opacity:.62,marginTop:'3px'}}>{sub}</span>
+        </a>)}
+      </div>
     </section>
 
     <section className="collection wrap" id="collection"><div className="section-head"><div><p className="eyebrow">THE DC COLLECTION</p><h2>PICK YOUR <em>DAILY FLEX.</em></h2><p>19 products. One daily wellness system.</p></div><a className="btn dark" href="#collection">VIEW ALL PRODUCTS →</a></div><div className="product-grid">{products.map(product => <article className={`product-card ${product.tone}`} key={product.name}><div className="product-art"><Pouch product={product}/></div><h3>{product.name}</h3><p>{product.sub}</p><div className="price-row"><strong>{product.note}</strong><b>{product.price}</b></div><button>ADD TO CART <span>🛒</span></button></article>)}</div></section>
