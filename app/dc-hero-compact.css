@@ -10,12 +10,23 @@
   .hero-proof{height:46px!important}
 }
 @media(max-width:600px){
-  .hero-copy{padding:32px 22px 22px!important}
-  .hero h1{font-size:clamp(48px,14vw,68px)!important}
-  .lead{font-size:17px!important;margin:18px 0!important}
-  .hero-stage{min-height:390px!important;height:390px!important}
-  .hero-proof{height:42px!important;gap:14px!important;font-size:8px!important;overflow:hidden;white-space:nowrap}
-  .hero-proof b{font-size:8px!important}
-  .hero-pouches{bottom:42px!important;right:30px!important;transform:scale(.82) rotate(-2deg)!important;transform-origin:bottom right}
-  .hero-shaker{bottom:35px!important;transform:scale(.8);transform-origin:bottom right}
+  .hero-copy{padding:24px 20px 14px!important}
+  .hero h1{font-size:clamp(44px,12vw,60px)!important}
+  .lead{font-size:15px!important;margin:12px 0!important;line-height:1.3!important}
+  .hero-ctas{gap:8px!important}
+  .hero-ctas .btn{padding:11px 14px!important;font-size:10px!important}
+  .hero-stage{min-height:300px!important;height:300px!important}
+  .hero-proof{height:38px!important;gap:10px!important;font-size:7px!important;overflow:hidden;white-space:nowrap}
+  .hero-proof b{font-size:7px!important}
+  .hero-pouches{bottom:32px!important;right:22px!important;transform:scale(.68) rotate(-2deg)!important;transform-origin:bottom right}
+  .hero-shaker{bottom:25px!important;transform:scale(.65);transform-origin:bottom right}
+  .hero-stage:after{left:14px!important;top:14px!important;padding:7px 10px!important;font-size:7px!important}
+  .ingredient-scene{bottom:15px!important;left:20px!important;transform:scale(.7);transform-origin:left bottom}
+}
+
+/* Final compact override: keep the hero visual and CTA above the fold. */
+@media(max-width:600px){
+  .hero-copy{padding-top:18px!important;padding-bottom:10px!important}
+  .hero-stage{height:275px!important;min-height:275px!important}
+  .hero-proof{height:34px!important}
 }
