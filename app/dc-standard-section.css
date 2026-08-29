@@ -1,0 +1,36 @@
+/* DC Standard — reference section: immediately below wellness categories */
+main{display:flex;flex-direction:column}
+main>.announcement{order:1}
+main>.nav{order:2}
+main>.hero{order:3}
+main>.wellness-strip{order:4}
+main>.ingredients-band{order:5}
+main>.collection{order:6}
+main>.how{order:7}
+main>.life{order:8}
+main>.trust{order:9}
+main>.closing{order:10}
+main>footer{order:11}
+
+.ingredients-band{background:transparent!important;color:var(--ink)!important;padding:0 0 22px!important}
+.ingredients-band .ingredient-layout{width:min(1400px,calc(100% - 72px));margin:auto;display:grid!important;grid-template-columns:36% 64%!important;min-height:205px;border:1px solid #e6dfd2;border-radius:22px;overflow:hidden;background:#fffdf8}
+.ingredients-band .ingredient-copy{padding:28px 30px!important;background:#eef0df;display:flex;flex-direction:column;justify-content:center}
+.ingredients-band .ingredient-copy .eyebrow{font-size:11px!important;letter-spacing:.16em!important;margin:0 0 7px!important;color:#71851d!important}
+.ingredients-band .ingredient-copy h2{font-family:'Space Grotesk'!important;font-size:34px!important;line-height:.92!important;letter-spacing:-.055em!important;margin:0 0 12px!important;color:#171714!important}
+.ingredients-band .ingredient-copy h2 em{color:#8eae1c!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:11px!important;line-height:1.45!important;color:#625f56!important;max-width:330px!important;margin:0 0 14px!important}
+.ingredients-band .ingredient-copy .btn{align-self:flex-start;padding:10px 15px!important;border-radius:999px!important;font-size:9px!important;background:#7da51d!important;color:#fff!important}
+.ingredients-band .ingredient-grid{display:block!important;position:relative!important;min-height:205px!important;margin:0!important;padding:0!important;background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1800&q=92')!important;background-size:cover!important;background-position:center!important}
+.ingredients-band .ingredient-grid:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.03),rgba(255,255,255,0) 35%);pointer-events:none}
+.ingredients-band .ingredient{display:none!important}
+
+@media(max-width:700px){
+  .ingredients-band{padding:0 0 18px!important}
+  .ingredients-band .ingredient-layout{width:calc(100% - 40px)!important;grid-template-columns:47% 53%!important;min-height:185px!important;border-radius:19px!important}
+  .ingredients-band .ingredient-copy{padding:20px 15px!important}
+  .ingredients-band .ingredient-copy .eyebrow{font-size:8px!important;margin-bottom:6px!important}
+  .ingredients-band .ingredient-copy h2{font-size:24px!important;line-height:.94!important;margin-bottom:9px!important}
+  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:8px!important;line-height:1.35!important;margin-bottom:10px!important}
+  .ingredients-band .ingredient-copy .btn{padding:8px 10px!important;font-size:7px!important}
+  .ingredients-band .ingredient-grid{min-height:185px!important;background-position:center!important}
+}
