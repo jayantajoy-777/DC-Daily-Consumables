@@ -1,0 +1,14 @@
+/* FINAL HOMEPAGE ORDER LOCK
+   Keep The DC Standard immediately below Shop By Need / wellness tiles. */
+main{display:flex!important;flex-direction:column!important}
+main>.announcement{order:1!important}
+main>.nav{order:2!important}
+main>.hero{order:3!important}
+main>.wellness-strip{order:4!important}
+main>.ingredients-band{order:5!important}
+main>.collection{order:6!important}
+main>.how{order:7!important}
+main>.life{order:8!important}
+main>.trust{order:9!important}
+main>.closing{order:10!important}
+main>footer{order:11!important}
