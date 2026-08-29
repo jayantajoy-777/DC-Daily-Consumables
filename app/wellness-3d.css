@@ -1,39 +1,22 @@
-/* DC Wellness — premium high-resolution 3D-style visual treatment */
+/* DC Wellness — premium high-resolution nature photography contained inside the existing cards */
 .wellness-track{scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .wellness-track::-webkit-scrollbar{display:none}
 .wellness-card{perspective:900px;transform:translateZ(0)}
-.wellness-card .wellness-visual{position:relative!important;height:78px!important;min-height:78px!important;width:100%!important;overflow:hidden!important;isolation:isolate;border:1px solid rgba(35,40,25,.09)!important;border-radius:19px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -18px 28px rgba(30,35,20,.06),0 9px 20px rgba(35,31,18,.10)!important;transform:translateZ(0);transition:transform .22s ease,box-shadow .22s ease}
-.wellness-card .wellness-visual:before{content:"";position:absolute;width:82px;height:82px;left:50%;top:50%;transform:translate(-50%,-49%);border-radius:50%;background:radial-gradient(circle at 30% 23%,rgba(255,255,255,.98) 0 9%,rgba(255,255,255,.55) 18%,rgba(255,255,255,.12) 42%,rgba(255,255,255,0) 68%);box-shadow:0 13px 25px rgba(30,35,20,.13),inset -7px -9px 14px rgba(30,35,20,.08);z-index:-1}
-.wellness-card .wellness-visual:after{content:"";position:absolute;left:8%;top:7%;width:84%;height:34%;border-radius:999px;background:linear-gradient(105deg,rgba(255,255,255,.72),rgba(255,255,255,0));transform:rotate(-8deg);pointer-events:none;opacity:.8}
-.wellness-card .wellness-visual svg{width:50px!important;height:50px!important;flex:0 0 50px;stroke-width:2.15!important;color:#26351d!important;filter:drop-shadow(0 7px 5px rgba(20,27,13,.22)) drop-shadow(0 1px 0 rgba(255,255,255,.85));transform:translateZ(20px) scale(1.06);transition:transform .22s ease,filter .22s ease}
-.wellness-card:nth-child(1) .wellness-visual{background:linear-gradient(145deg,#f7fbdc 0%,#dce9b2 58%,#c8db8c 100%)!important}
-.wellness-card:nth-child(2) .wellness-visual{background:linear-gradient(145deg,#f1f4fb 0%,#dbe5f5 56%,#c6d6ed 100%)!important}
-.wellness-card:nth-child(3) .wellness-visual{background:linear-gradient(145deg,#fff6e9 0%,#f3dfc9 55%,#e8c9ad 100%)!important}
-.wellness-card:nth-child(4) .wellness-visual{background:linear-gradient(145deg,#f3f8ee 0%,#dce9d6 55%,#c6dbc0 100%)!important}
-.wellness-card:nth-child(5) .wellness-visual{background:linear-gradient(145deg,#f0f8f8 0%,#d9e9ea 55%,#c4dddd 100%)!important}
-.wellness-card:nth-child(6) .wellness-visual{background:linear-gradient(145deg,#f4f2ff 0%,#e0def3 55%,#c9c8e8 100%)!important}
-.wellness-card:nth-child(7) .wellness-visual{background:linear-gradient(145deg,#fff0f0 0%,#f2d9d8 55%,#e6c1c3 100%)!important}
-.wellness-card:nth-child(8) .wellness-visual{background:linear-gradient(145deg,#fff0ef 0%,#f0d8d6 55%,#e3bdbb 100%)!important}
-.wellness-card:nth-child(9) .wellness-visual{background:linear-gradient(145deg,#f8f2e9 0%,#eadfce 55%,#d9c6ae 100%)!important}
-.wellness-card:nth-child(10) .wellness-visual{background:linear-gradient(145deg,#fff1f6 0%,#efdbe6 55%,#e4c2d2 100%)!important}
-.wellness-card:hover .wellness-visual,.wellness-card:focus-visible .wellness-visual{transform:translateY(-3px) rotateX(2deg);box-shadow:inset 0 1px 0 rgba(255,255,255,.98),inset 0 -20px 30px rgba(30,35,20,.07),0 15px 28px rgba(35,31,18,.14)!important}
-.wellness-card:hover .wellness-visual svg,.wellness-card:focus-visible .wellness-visual svg{transform:translateZ(28px) scale(1.13) rotate(-2deg);filter:drop-shadow(0 10px 7px rgba(20,27,13,.26)) drop-shadow(0 1px 0 rgba(255,255,255,.9))}
+.wellness-card .wellness-visual{position:relative!important;height:78px!important;min-height:78px!important;width:100%!important;overflow:hidden!important;isolation:isolate;border:1px solid rgba(35,40,25,.09)!important;border-radius:19px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 9px 20px rgba(35,31,18,.10)!important;transform:translateZ(0);transition:transform .22s ease,box-shadow .22s ease;background-repeat:no-repeat!important;background-position:center!important;background-size:82% 82%!important;background-blend-mode:normal!important}
+.wellness-card .wellness-visual:before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at 26% 18%,rgba(255,255,255,.72),rgba(255,255,255,0) 48%),linear-gradient(180deg,rgba(255,255,255,.10),rgba(25,30,18,.08));z-index:1;pointer-events:none}
+.wellness-card .wellness-visual:after{content:"";position:absolute;left:7%;top:7%;width:86%;height:28%;border-radius:999px;background:linear-gradient(105deg,rgba(255,255,255,.62),rgba(255,255,255,0));transform:rotate(-8deg);pointer-events:none;z-index:2}
+.wellness-card .wellness-visual svg{display:none!important}
+.wellness-card:nth-child(1) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f7fbdc,#dce9b2)!important}
+.wellness-card:nth-child(2) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f1f4fb,#dbe5f5)!important}
+.wellness-card:nth-child(3) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#fff6e9,#f3dfc9)!important}
+.wellness-card:nth-child(4) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f3f8ee,#dce9d6)!important}
+.wellness-card:nth-child(5) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f0f8f8,#d9e9ea)!important}
+.wellness-card:nth-child(6) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1515894203077-9cd36032142f?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f4f2ff,#e0def3)!important}
+.wellness-card:nth-child(7) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#fff0f0,#f2d9d8)!important}
+.wellness-card:nth-child(8) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#fff0ef,#f0d8d6)!important}
+.wellness-card:nth-child(9) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#f8f2e9,#eadfce)!important}
+.wellness-card:nth-child(10) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=92'),linear-gradient(145deg,#fff1f6,#efdbe6)!important}
+.wellness-card:hover .wellness-visual,.wellness-card:focus-visible .wellness-visual{transform:translateY(-3px) rotateX(2deg);box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 15px 28px rgba(35,31,18,.14)!important}
 .wellness-card b{font-family:'Space Grotesk',sans-serif!important;letter-spacing:.08em!important}
-@media (max-width:700px){.wellness-card{width:92px!important}.wellness-card .wellness-visual{height:76px!important;min-height:76px!important;border-radius:18px!important}.wellness-card .wellness-visual svg{width:48px!important;height:48px!important;flex-basis:48px}}
-@media (min-width:701px){.wellness-card{width:108px!important}.wellness-card .wellness-visual{height:92px!important;min-height:92px!important;border-radius:21px!important}.wellness-card .wellness-visual svg{width:56px!important;height:56px!important;flex-basis:56px}}
-
-/* HD photographic category visuals — intentionally contained inside the existing card boxes */
-.wellness-card .wellness-visual{background-repeat:no-repeat!important;background-size:72% 72%!important;background-position:center!important;background-blend-mode:normal!important}
-.wellness-card .wellness-visual svg{opacity:.18!important;position:relative;z-index:3!important}
-.wellness-card:nth-child(1) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f7fbdc,#dce9b2)!important}
-.wellness-card:nth-child(2) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f1f4fb,#dbe5f5)!important}
-.wellness-card:nth-child(3) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1746281673841-31a64ca33ef1?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#fff6e9,#f3dfc9)!important}
-.wellness-card:nth-child(4) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1575052814086-f385e2e2ad1b?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f3f8ee,#dce9d6)!important}
-.wellness-card:nth-child(5) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f0f8f8,#d9e9ea)!important}
-.wellness-card:nth-child(6) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f4f2ff,#e0def3)!important}
-.wellness-card:nth-child(7) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#fff0f0,#f2d9d8)!important}
-.wellness-card:nth-child(8) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#fff0ef,#f0d8d6)!important}
-.wellness-card:nth-child(9) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#f8f2e9,#eadfce)!important}
-.wellness-card:nth-child(10) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1200&q=90'),linear-gradient(145deg,#fff1f6,#efdbe6)!important}
-.wellness-card .wellness-visual:before{z-index:1!important;background:radial-gradient(circle at 28% 18%,rgba(255,255,255,.82),rgba(255,255,255,0) 55%)!important}
-.wellness-card .wellness-visual:after{z-index:2!important;background:linear-gradient(105deg,rgba(255,255,255,.45),rgba(255,255,255,0))!important}
+@media (max-width:700px){.wellness-card{width:92px!important}.wellness-card .wellness-visual{height:76px!important;min-height:76px!important;border-radius:18px!important;background-size:84% 84%!important}}
+@media (min-width:701px){.wellness-card{width:108px!important}.wellness-card .wellness-visual{height:92px!important;min-height:92px!important;border-radius:21px!important;background-size:82% 82%!important}}
