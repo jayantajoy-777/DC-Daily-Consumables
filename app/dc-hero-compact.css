@@ -1,0 +1,21 @@
+/* DC homepage hero — tighter vertical composition */
+.hero{min-height:490px!important}
+.hero-stage{min-height:455px!important}
+.hero-copy{padding-top:54px!important;padding-bottom:58px!important}
+.hero-proof{height:48px!important}
+@media(max-width:900px){
+  .hero{min-height:0!important;grid-template-columns:1fr!important}
+  .hero-copy{padding:42px 28px 30px!important}
+  .hero-stage{min-height:430px!important;height:430px!important}
+  .hero-proof{height:46px!important}
+}
+@media(max-width:600px){
+  .hero-copy{padding:32px 22px 22px!important}
+  .hero h1{font-size:clamp(48px,14vw,68px)!important}
+  .lead{font-size:17px!important;margin:18px 0!important}
+  .hero-stage{min-height:390px!important;height:390px!important}
+  .hero-proof{height:42px!important;gap:14px!important;font-size:8px!important;overflow:hidden;white-space:nowrap}
+  .hero-proof b{font-size:8px!important}
+  .hero-pouches{bottom:42px!important;right:30px!important;transform:scale(.82) rotate(-2deg)!important;transform-origin:bottom right}
+  .hero-shaker{bottom:35px!important;transform:scale(.8);transform-origin:bottom right}
+}
