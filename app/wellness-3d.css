@@ -1,25 +1,24 @@
-/* DC Wellness — clean single-layer category cards */
+/* DC Wellness — flat, single-surface category tiles */
 .wellness-track{scrollbar-width:none;-webkit-overflow-scrolling:touch}.wellness-track::-webkit-scrollbar{display:none}
 
-/* One visual surface only: no 3D perspective, no stacked highlights, no artificial depth */
-.wellness-card{perspective:none!important;transform:none!important;transition:none!important}
-.wellness-card .wellness-visual{position:relative!important;height:78px!important;min-height:78px!important;width:100%!important;overflow:hidden!important;isolation:isolate;border:0!important;border-radius:18px!important;box-shadow:none!important;transform:none!important;transition:none!important;background-repeat:no-repeat!important;background-position:center!important;background-size:cover!important;background-color:#eee!important;background-blend-mode:normal!important}
+.wellness-card{perspective:none!important;transform:none!important;transition:none!important;background:transparent!important;box-shadow:none!important;border:0!important}
+.wellness-card .wellness-visual{position:relative!important;height:62px!important;min-height:62px!important;width:100%!important;overflow:hidden!important;isolation:isolate;border:0!important;border-radius:16px!important;box-shadow:none!important;transform:none!important;transition:none!important;background-image:none!important;background-repeat:no-repeat!important;background-position:center!important;background-size:auto!important;background-blend-mode:normal!important}
 .wellness-card .wellness-visual:before,.wellness-card .wellness-visual:after{display:none!important;content:none!important}
-.wellness-card .wellness-visual svg{display:none!important}
+.wellness-card .wellness-visual svg{display:block!important;position:relative!important;z-index:1!important;width:34px!important;height:34px!important;max-width:none!important;max-height:none!important;filter:none!important;left:auto!important;bottom:auto!important;transform:none!important}
 
-/* HD category photography — contained directly in the single card surface */
-.wellness-card:nth-child(1) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(2) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(3) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1630874607856-95747f3d7689?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(4) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1544367567-0f2fcb009e5b?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(5) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(6) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1515894203077-9cd36032142f?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(7) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(8) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(9) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=1600&q=95')!important}
-.wellness-card:nth-child(10) .wellness-visual{background-image:url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1600&q=95')!important}
+/* Purposeful pastel surfaces — one layer only, no photography or nested frames */
+.wellness-card:nth-child(1) .wellness-visual{background:#e4efc8!important;color:#56752d!important}
+.wellness-card:nth-child(2) .wellness-visual{background:#dfe9f2!important;color:#3f5d76!important}
+.wellness-card:nth-child(3) .wellness-visual{background:#f3e1d0!important;color:#855c39!important}
+.wellness-card:nth-child(4) .wellness-visual{background:#e1eddf!important;color:#4e6f4b!important}
+.wellness-card:nth-child(5) .wellness-visual{background:#deebed!important;color:#3d6269!important}
+.wellness-card:nth-child(6) .wellness-visual{background:#e7e4f1!important;color:#5d587c!important}
+.wellness-card:nth-child(7) .wellness-visual{background:#f1dddd!important;color:#89535a!important}
+.wellness-card:nth-child(8) .wellness-visual{background:#f1ddd9!important;color:#824c43!important}
+.wellness-card:nth-child(9) .wellness-visual{background:#ecdfcf!important;color:#73583e!important}
+.wellness-card:nth-child(10) .wellness-visual{background:#f0dce7!important;color:#85546d!important}
 
-/* Keep labels clean and let the photography do the visual work */
 .wellness-card b{font-family:'Space Grotesk',sans-serif!important;letter-spacing:.08em!important}
-@media (max-width:700px){.wellness-card{width:92px!important}.wellness-card .wellness-visual{height:76px!important;min-height:76px!important;border-radius:17px!important;background-size:cover!important}}
-@media (min-width:701px){.wellness-card{width:108px!important}.wellness-card .wellness-visual{height:92px!important;min-height:92px!important;border-radius:20px!important;background-size:cover!important}}
+.wellness-card span{box-shadow:none!important}
+@media(max-width:700px){.wellness-card{width:82px!important}.wellness-card .wellness-visual{height:62px!important;min-height:62px!important;border-radius:16px!important}}
+@media(min-width:701px){.wellness-card{width:108px!important}.wellness-card .wellness-visual{height:78px!important;min-height:78px!important;border-radius:18px!important}}
