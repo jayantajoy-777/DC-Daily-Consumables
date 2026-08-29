@@ -1,0 +1,11 @@
+/* DC Wellness — premium contained 3D-style visual treatment */
+.wellness-track{scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.wellness-track::-webkit-scrollbar{display:none}
+.wellness-card{perspective:500px}
+.wellness-card .wellness-visual{position:relative!important;height:74px!important;min-height:74px!important;overflow:hidden!important;isolation:isolate;border:1px solid rgba(32,38,22,.08)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.8),inset 0 -10px 20px rgba(32,38,22,.045),0 8px 18px rgba(38,34,20,.08)!important;transform:translateZ(0)}
+.wellness-card .wellness-visual:before{content:"";position:absolute;width:70px;height:70px;left:50%;top:50%;transform:translate(-50%,-48%);border-radius:50%;background:radial-gradient(circle at 32% 25%,rgba(255,255,255,.9) 0 10%,rgba(255,255,255,.35) 23%,rgba(255,255,255,0) 62%);box-shadow:0 12px 22px rgba(40,45,25,.10);z-index:-1}
+.wellness-card .wellness-visual:after{content:"";position:absolute;width:92%;height:42%;left:4%;top:-20%;border-radius:50%;background:linear-gradient(110deg,rgba(255,255,255,.7),rgba(255,255,255,0));transform:rotate(-8deg);pointer-events:none}
+.wellness-card .wellness-visual svg{width:48px!important;height:48px!important;flex:0 0 48px;stroke-width:2.25!important;color:#27351d!important;filter:drop-shadow(0 5px 4px rgba(24,31,16,.18)) drop-shadow(0 1px 1px rgba(255,255,255,.65));transform:translateZ(12px) scale(1.02);transition:transform .22s ease,filter .22s ease}
+.wellness-card:hover .wellness-visual svg,.wellness-card:focus-visible .wellness-visual svg{transform:translateZ(18px) scale(1.10) rotate(-2deg);filter:drop-shadow(0 8px 6px rgba(24,31,16,.22))}
+.wellness-card:hover .wellness-visual{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),inset 0 -12px 22px rgba(32,38,22,.05),0 12px 22px rgba(38,34,20,.11)!important}
+@media (max-width:700px){.wellness-card .wellness-visual{height:70px!important;min-height:70px!important;border-radius:17px!important}.wellness-card .wellness-visual svg{width:44px!important;height:44px!important;flex-basis:44px}}
