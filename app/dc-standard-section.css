@@ -12,25 +12,33 @@ main>.trust{order:9}
 main>.closing{order:10}
 main>footer{order:11}
 
+/* Reference design: compact rounded split panel, copy left + real ingredients photography right. */
 .ingredients-band{background:transparent!important;color:var(--ink)!important;padding:0 0 22px!important}
-.ingredients-band .ingredient-layout{width:min(1400px,calc(100% - 72px));margin:auto;display:grid!important;grid-template-columns:36% 64%!important;min-height:205px;border:1px solid #e6dfd2;border-radius:22px;overflow:hidden;background:#fffdf8}
-.ingredients-band .ingredient-copy{padding:28px 30px!important;background:#eef0df;display:flex;flex-direction:column;justify-content:center}
-.ingredients-band .ingredient-copy .eyebrow{font-size:11px!important;letter-spacing:.16em!important;margin:0 0 7px!important;color:#71851d!important}
-.ingredients-band .ingredient-copy h2{font-family:'Space Grotesk'!important;font-size:34px!important;line-height:.92!important;letter-spacing:-.055em!important;margin:0 0 12px!important;color:#171714!important}
-.ingredients-band .ingredient-copy h2 em{color:#8eae1c!important}
-.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:11px!important;line-height:1.45!important;color:#625f56!important;max-width:330px!important;margin:0 0 14px!important}
-.ingredients-band .ingredient-copy .btn{align-self:flex-start;padding:10px 15px!important;border-radius:999px!important;font-size:9px!important;background:#7da51d!important;color:#fff!important}
-.ingredients-band .ingredient-grid{display:block!important;position:relative!important;min-height:205px!important;margin:0!important;padding:0!important;background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1800&q=92')!important;background-size:cover!important;background-position:center!important}
+.ingredients-band .ingredient-layout{width:min(1400px,calc(100% - 72px));margin:auto;display:grid!important;grid-template-columns:28% 72%!important;min-height:205px;height:205px;border:1px solid #e6dfd2;border-radius:22px;overflow:hidden;background:#fffdf8}
+.ingredients-band .ingredient-copy{padding:26px 30px!important;background:#eef0df;display:flex;flex-direction:column;justify-content:center;min-width:0;overflow:hidden}
+.ingredients-band .ingredient-copy .eyebrow{font-size:10px!important;letter-spacing:.16em!important;margin:0 0 7px!important;color:#71851d!important}
+.ingredients-band .ingredient-copy h2{font-family:'Space Grotesk'!important;font-size:32px!important;line-height:.93!important;letter-spacing:-.055em!important;margin:0 0 11px!important;color:#171714!important;white-space:normal!important}
+.ingredients-band .ingredient-copy h2 em{color:#8eae1c!important;font-style:normal!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:11px!important;line-height:1.4!important;color:#625f56!important;max-width:300px!important;margin:0 0 13px!important}
+.ingredients-band .ingredient-copy .btn{align-self:flex-start;padding:9px 14px!important;border-radius:999px!important;font-size:9px!important;background:#7da51d!important;color:#fff!important}
+.ingredients-band .ingredient-grid{display:block!important;position:relative!important;min-height:205px!important;height:205px!important;margin:0!important;padding:0!important;background-image:url('https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?auto=format&fit=crop&w=1800&q=92')!important;background-size:cover!important;background-position:center 52%!important}
 .ingredients-band .ingredient-grid:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.03),rgba(255,255,255,0) 35%);pointer-events:none}
 .ingredients-band .ingredient{display:none!important}
 
 @media(max-width:700px){
   .ingredients-band{padding:0 0 18px!important}
-  .ingredients-band .ingredient-layout{width:calc(100% - 40px)!important;grid-template-columns:47% 53%!important;min-height:185px!important;border-radius:19px!important}
-  .ingredients-band .ingredient-copy{padding:20px 15px!important}
-  .ingredients-band .ingredient-copy .eyebrow{font-size:8px!important;margin-bottom:6px!important}
-  .ingredients-band .ingredient-copy h2{font-size:24px!important;line-height:.94!important;margin-bottom:9px!important}
-  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:8px!important;line-height:1.35!important;margin-bottom:10px!important}
-  .ingredients-band .ingredient-copy .btn{padding:8px 10px!important;font-size:7px!important}
-  .ingredients-band .ingredient-grid{min-height:185px!important;background-position:center!important}
+  .ingredients-band .ingredient-layout{width:calc(100% - 40px)!important;grid-template-columns:39% 61%!important;min-height:205px!important;height:205px!important;border-radius:19px!important}
+  .ingredients-band .ingredient-copy{padding:18px 13px!important;justify-content:center!important}
+  .ingredients-band .ingredient-copy .eyebrow{font-size:7px!important;line-height:1.2!important;letter-spacing:.14em!important;margin-bottom:6px!important}
+  .ingredients-band .ingredient-copy h2{font-size:20px!important;line-height:.95!important;letter-spacing:-.055em!important;margin:0 0 9px!important;max-width:100%!important}
+  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:7.5px!important;line-height:1.32!important;margin:0!important;max-width:100%!important}
+  .ingredients-band .ingredient-copy .btn{display:none!important}
+  .ingredients-band .ingredient-grid{min-height:205px!important;height:205px!important;background-position:center 52%!important}
+}
+
+@media(max-width:380px){
+  .ingredients-band .ingredient-layout{width:calc(100% - 28px)!important;grid-template-columns:40% 60%!important}
+  .ingredients-band .ingredient-copy{padding-left:11px!important;padding-right:10px!important}
+  .ingredients-band .ingredient-copy h2{font-size:18px!important}
+  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:7px!important}
 }
