@@ -3,7 +3,7 @@
   display:block!important;
   position:relative!important;
   width:min(calc(100% - 32px),1200px)!important;
-  aspect-ratio:1512 / 646!important;
+  aspect-ratio:1200 / 469!important;
   height:auto!important;
   min-height:0!important;
   max-height:none!important;
@@ -35,7 +35,7 @@
 @media(max-width:700px){
   .ingredients-band{
     width:calc(100% - 24px)!important;
-    aspect-ratio:1512 / 646!important;
+    aspect-ratio:1200 / 469!important;
     height:auto!important;
     margin-bottom:14px!important;
     border-radius:15px!important;
