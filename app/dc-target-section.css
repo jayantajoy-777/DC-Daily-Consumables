@@ -31,6 +31,12 @@
   transform:none!important;
 }
 
+/* Disable the older gradient overlay from next-portion.css. */
+.ingredients-band::after{
+  content:none!important;
+  display:none!important;
+}
+
 .ingredients-band .ingredient-layout{
   position:relative!important;
   z-index:1!important;
