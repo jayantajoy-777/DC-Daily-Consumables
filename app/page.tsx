@@ -1,3 +1,5 @@
+import DCCollection from './components/DCCollection';
+
 const products = [
   { name: 'DC ENERGY', sub: 'Daily Energy • Performance', price: '₹699', tone: 'lime', note: '150 g' },
   { name: 'DC WEIGHT GAIN', sub: 'Daily Weight Gainer', price: '₹699', tone: 'amber', note: '150 g' },
@@ -12,16 +14,7 @@ const ingredients = [
 ];
 
 const wellnessCategories = [
-  ['leaf','DAILY','Everyday nutrition','#edf4d8'],
-  ['fit','FIT','Strength & performance','#e5edf5'],
-  ['ritual','RITUAL','Daily rituals','#f7e7d8'],
-  ['body','BODY','Body wellness','#e7efe4'],
-  ['brain','BRAIN','Focus & clarity','#e5eef0'],
-  ['sleep','SLEEP','Better sleep','#e9e7f3'],
-  ['drop','SUGAR','Sugar balance','#f5e4e5'],
-  ['heart','LIPID','Heart health','#f5e1df'],
-  ['bone','BONE','Bone strength','#eee5d8'],
-  ['flower','BEAUTY','Glow from within','#f4e4eb'],
+  ['leaf','DAILY','Everyday nutrition','#edf4d8'], ['fit','FIT','Strength & performance','#e5edf5'], ['ritual','RITUAL','Daily rituals','#f7e7d8'], ['body','BODY','Body wellness','#e7efe4'], ['brain','BRAIN','Focus & clarity','#e5eef0'], ['sleep','SLEEP','Better sleep','#e9e7f3'], ['drop','SUGAR','Sugar balance','#f5e4e5'], ['heart','LIPID','Heart health','#f5e1df'], ['bone','BONE','Bone strength','#eee5d8'], ['flower','BEAUTY','Glow from within','#f4e4eb'],
 ];
 
 function WellnessVisual({kind}: {kind:string}) {
@@ -51,40 +44,10 @@ function Pouch({ product, hero = false }: { product: typeof products[number]; he
 export default function Home() {
   return <main>
     <div className="announcement"><span>✦ NO CHEMICALS. NO PRESERVATIVES. PURE HERBAL POWDER.</span><i/> <span>🌿 PURE VEGAN</span><i/> <span>♡ MADE IN INDIA</span><i/> <span>FREE SHIPPING ON ORDERS ABOVE ₹999</span></div>
-    <header className="nav wrap">
-      <a className="brand" href="#top"><strong>DC</strong><span>DAILY<br/>CONSUMABLES</span></a>
-      <nav><a className="active" href="#top">Home</a><a href="#collection">Shop</a><a href="#find">Find My Flex</a><a href="#story">Our Story</a><a href="#ingredients">Ingredients</a><a href="#contact">Contact</a></nav>
-      <div className="actions"><button aria-label="Search">⌕</button><button aria-label="Account">♙</button><button aria-label="Cart" className="cart">🛒<b>0</b></button><button className="menu" aria-label="Menu">☰</button></div>
-    </header>
-    <section className="hero wrap" id="top">
-      <div className="hero-copy"><p className="eyebrow">PLANT-BASED • HERBAL • DAILY WELLNESS</p><h1>YOUR DAILY<br/><em>FLEX.</em></h1><p className="lead">Whatever your day needs,<br/>there’s a DC for that.</p><div className="hero-ctas"><a className="btn primary" href="#collection">SHOP THE COLLECTION <span>→</span></a><a className="btn outline" href="#find">FIND MY FLEX <span>✦</span></a></div></div>
-      <div className="hero-stage"><div className="blob blob-one"/><div className="blob blob-two"/><div className="ingredient-scene"><span className="bowl pea">●●●</span><span className="bowl greenpow">DC</span><span className="bowl berry">● ●</span><span className="leaf">⌁</span></div><div className="hero-pouches"><Pouch product={products[2]} /><Pouch product={products[0]} hero /><Pouch product={products[3]} /><Pouch product={products[4]} /></div><div className="hero-shaker">DC<span>YOUR<br/>DAILY<br/>FLEX.</span></div></div>
-      <div className="hero-proof"><span>♧ <b>PLANT-BASED</b></span><span>◈ <b>PURE INGREDIENTS</b></span><span>♧ <b>NO PRESERVATIVES</b></span><span>⌁ <b>NO CHEMICALS</b></span><span>♡ <b>MADE IN INDIA</b></span></div>
-    </section>
-    <section className="wellness-strip wrap" id="story" aria-label="Shop by wellness goal" style={{marginTop:'12px',marginBottom:'20px'}}>
-      <div style={{display:'flex',alignItems:'end',justifyContent:'space-between',gap:'16px',marginBottom:'10px'}}>
-        <div><p className="eyebrow" style={{marginBottom:'2px'}}>SHOP BY NEED</p><h2 style={{margin:0,fontSize:'clamp(22px,3vw,34px)',lineHeight:1}}>YOUR DAILY <em>FLEX.</em></h2></div>
-        <a className="text-link" href="#collection" style={{whiteSpace:'nowrap'}}>VIEW ALL →</a>
-      </div>
-      <div className="wellness-track" style={{display:'flex',gap:'10px',overflowX:'auto',padding:'2px 2px 6px',scrollbarWidth:'none'}}>
-        {wellnessCategories.map(([kind,name,sub,bg]) => <a href="#collection" key={name} className="wellness-card" style={{flex:'0 0 auto',width:'82px',textDecoration:'none',color:'inherit',textAlign:'center'}}>
-          <div className="wellness-visual" style={{height:'62px',borderRadius:'16px',background:bg,display:'flex',alignItems:'center',justifyContent:'center',color:'#26301d',boxShadow:'inset 0 0 0 1px rgba(30,35,20,.07),0 5px 12px rgba(40,35,20,.05)',transition:'transform .2s ease'}}><WellnessVisual kind={kind}/></div>
-          <b style={{display:'block',fontSize:'9px',letterSpacing:'.06em',marginTop:'7px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{name}</b>
-          <span style={{display:'block',fontSize:'8px',lineHeight:1.25,opacity:.6,marginTop:'2px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{sub}</span>
-        </a>)}
-      </div>
-    </section>
-    <section className="collection wrap" id="collection"><div className="section-head"><div><p className="eyebrow">THE DC COLLECTION</p><h2>PICK YOUR <em>DAILY FLEX.</em></h2><p>19 products. One daily wellness system.</p></div><a className="btn dark" href="#collection">VIEW ALL PRODUCTS →</a></div><div className="product-grid">{products.map(product => <article className={`product-card ${product.tone}`} key={product.name}><div className="product-art">
-  {product.name === 'DC PLANT PROTEIN' ? (
-    <img
-      src="/plant-protein-banner.PNG"
-      alt="DC Plant Protein with Creatine"
-      className="plant-protein-banner"
-    />
-  ) : (
-    <Pouch product={product}/>
-  )}
-</div><h3>{product.name}</h3><p>{product.sub}</p><div className="price-row"><strong>{product.note}</strong><b>{product.price}</b></div><button>ADD TO CART <span>🛒</span></button></article>)}</div></section>
+    <header className="nav wrap"><a className="brand" href="#top"><strong>DC</strong><span>DAILY<br/>CONSUMABLES</span></a><nav><a className="active" href="#top">Home</a><a href="#collection">Shop</a><a href="#find">Find My Flex</a><a href="#story">Our Story</a><a href="#ingredients">Ingredients</a><a href="#contact">Contact</a></nav><div className="actions"><button aria-label="Search">⌕</button><button aria-label="Account">♙</button><button aria-label="Cart" className="cart">🛒<b>0</b></button><button className="menu" aria-label="Menu">☰</button></div></header>
+    <section className="hero wrap" id="top"><div className="hero-copy"><p className="eyebrow">PLANT-BASED • HERBAL • DAILY WELLNESS</p><h1>YOUR DAILY<br/><em>FLEX.</em></h1><p className="lead">Whatever your day needs,<br/>there’s a DC for that.</p><div className="hero-ctas"><a className="btn primary" href="#collection">SHOP THE COLLECTION <span>→</span></a><a className="btn outline" href="#find">FIND MY FLEX <span>✦</span></a></div></div><div className="hero-stage"><div className="blob blob-one"/><div className="blob blob-two"/><div className="ingredient-scene"><span className="bowl pea">●●●</span><span className="bowl greenpow">DC</span><span className="bowl berry">● ●</span><span className="leaf">⌁</span></div><div className="hero-pouches"><Pouch product={products[2]} /><Pouch product={products[0]} hero /><Pouch product={products[3]} /><Pouch product={products[4]} /></div><div className="hero-shaker">DC<span>YOUR<br/>DAILY<br/>FLEX.</span></div></div><div className="hero-proof"><span>♧ <b>PLANT-BASED</b></span><span>◈ <b>PURE INGREDIENTS</b></span><span>♧ <b>NO PRESERVATIVES</b></span><span>⌁ <b>NO CHEMICALS</b></span><span>♡ <b>MADE IN INDIA</b></span></div></section>
+    <section className="wellness-strip wrap" id="story" aria-label="Shop by wellness goal" style={{marginTop:'12px',marginBottom:'20px'}}><div style={{display:'flex',alignItems:'end',justifyContent:'space-between',gap:'16px',marginBottom:'10px'}}><div><p className="eyebrow" style={{marginBottom:'2px'}}>SHOP BY NEED</p><h2 style={{margin:0,fontSize:'clamp(22px,3vw,34px)',lineHeight:1}}>YOUR DAILY <em>FLEX.</em></h2></div><a className="text-link" href="#collection" style={{whiteSpace:'nowrap'}}>VIEW ALL →</a></div><div className="wellness-track" style={{display:'flex',gap:'10px',overflowX:'auto',padding:'2px 2px 6px',scrollbarWidth:'none'}}>{wellnessCategories.map(([kind,name,sub,bg]) => <a href="#collection" key={name} className="wellness-card" style={{flex:'0 0 auto',width:'82px',textDecoration:'none',color:'inherit',textAlign:'center'}}><div className="wellness-visual" style={{height:'62px',borderRadius:'16px',background:bg,display:'flex',alignItems:'center',justifyContent:'center',color:'#26301d',boxShadow:'inset 0 0 0 1px rgba(30,35,20,.07),0 5px 12px rgba(40,35,20,.05)',transition:'transform .2s ease'}}><WellnessVisual kind={kind}/></div><b style={{display:'block',fontSize:'9px',letterSpacing:'.06em',marginTop:'7px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{name}</b><span style={{display:'block',fontSize:'8px',lineHeight:1.25,opacity:.6,marginTop:'2px',whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis'}}>{sub}</span></a>)}</div></section>
+    <DCCollection />
     <section className="ingredients-band" id="ingredients"><div className="wrap ingredient-layout"><div className="ingredient-copy"><p className="eyebrow">WHAT GOES IN</p><h2>REAL INGREDIENTS.<br/><em>REAL NUTRITION.</em></h2><p>Whole-food ingredients, purposeful botanicals and plant-based nutrition—presented clearly.</p><a className="btn light" href="#ingredients">SEE ALL INGREDIENTS →</a></div><div className="ingredient-grid">{ingredients.map(([name, cls, tone]) => <div className="ingredient" key={name}><span className={`ingredient-orb ${tone}`}>{cls === 'peas' ? '●●●' : cls === 'moringa' ? '✦' : cls === 'oats' ? '◌' : cls === 'amla' ? '●' : cls === 'flax' ? '•••' : cls === 'beet' ? '◉' : '⌁'}</span><b>{name}</b></div>)}</div></div></section>
     <section className="how wrap"><div className="how-title"><p className="eyebrow">HOW TO USE</p><h2>Simple.<br/><em>Quick.</em><br/>Effective.</h2></div><div className="steps"><div><b>01</b><h3>SCOOP</h3><p>Take 1–2 scoops of your DC powder.</p></div><div><b>02</b><h3>MIX</h3><p>Add 200–300 ml water or milk.</p></div><div><b>03</b><h3>SHAKE</h3><p>Shake well until smooth.</p></div><div><b>04</b><h3>DRINK</h3><p>Fuel your day. Feel the difference.</p></div></div></section>
     <section className="life wrap"><div className="life-copy"><p className="eyebrow">BUILT FOR REAL LIFE</p><h2>Not just the gym.<br/><em>Your whole day.</em></h2><p>Morning routines, work days, workouts, travel and everything between.</p><a className="btn primary" href="#find">FIND MY FLEX →</a></div><div className="life-collage"><div className="life-card work">WORK<span>Clean nutrition<br/>to stay sharp.</span></div><div className="life-card gym">MOVE<span>Fuel performance.<br/>Push limits.</span></div><div className="life-card night">REST<span>Recover. Reset.<br/>Repeat.</span></div></div></section>
