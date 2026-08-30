@@ -9,6 +9,7 @@ import './next-portion.css';
 import './dc-standard-section.css';
 import './force-home-order.css';
 import './dc-target-section.css';
+import './dc-collection-heading.css';
 import HeroShowcase from './components/HeroShowcase';
 
 export const metadata: Metadata = { title: 'DC | Daily Consumables', description: 'YOUR DAILY FLEX.' };
