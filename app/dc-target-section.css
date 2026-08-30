@@ -1,22 +1,39 @@
-/* LOCKED SCOPE: BELOW CATEGORY TILES ONLY. HERO / SLIDESHOW MUST NOT BE MODIFIED. */
+/* LOCKED SCOPE: ONLY THE COMPACT VISUAL BELOW SHOP BY NEED. HERO / SLIDESHOW IS UNTOUCHED. */
 .ingredients-band{
-  display:block!important;
   position:relative!important;
-  width:min(calc(100% - 32px),1200px)!important;
-  aspect-ratio:1200 / 469!important;
+  display:block!important;
+  width:calc(100% - 48px)!important;
+  max-width:1400px!important;
   height:auto!important;
+  aspect-ratio:1200 / 469!important;
   min-height:0!important;
   max-height:none!important;
   margin:0 auto 22px!important;
   padding:0!important;
   overflow:hidden!important;
+  border:1px solid rgba(170,224,47,.55)!important;
   border-radius:22px!important;
-  border:1px solid rgba(170,224,47,.45)!important;
   box-sizing:border-box!important;
-  background:#050805 url('/dc-protein-banner.jpg') center/cover no-repeat!important;
+  background:#050805!important;
 }
+
+/* Put the actual banner artwork on the visible panel itself. */
+.ingredients-band::before{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:0!important;
+  display:block!important;
+  background-image:url('/dc-protein-banner.jpg')!important;
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:cover!important;
+  transform:none!important;
+}
+
 .ingredients-band .ingredient-layout{
   position:relative!important;
+  z-index:1!important;
   display:block!important;
   width:100%!important;
   height:100%!important;
@@ -28,19 +45,27 @@
   border-radius:22px!important;
   background:transparent!important;
 }
+
+/* The reference is one complete image, so do not overlay the old split-panel UI. */
 .ingredients-band .ingredient-grid,
 .ingredients-band .ingredient-copy{
   display:none!important;
 }
+
 @media(max-width:700px){
   .ingredients-band{
-    width:calc(100% - 24px)!important;
+    width:calc(100% - 48px)!important;
     aspect-ratio:1200 / 469!important;
-    height:auto!important;
-    margin-bottom:14px!important;
-    border-radius:15px!important;
-    background-size:cover!important;
-    background-position:center!important;
+    margin-bottom:18px!important;
+    border-radius:18px!important;
   }
-  .ingredients-band .ingredient-layout{height:100%!important;border-radius:15px!important}
+  .ingredients-band::before{
+    background-position:center center!important;
+    background-size:cover!important;
+  }
+  .ingredients-band .ingredient-layout{border-radius:18px!important}
+}
+
+@media(max-width:380px){
+  .ingredients-band{width:calc(100% - 32px)!important}
 }
