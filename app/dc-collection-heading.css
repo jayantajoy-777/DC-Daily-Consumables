@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap');
+
+/* DC COLLECTION HEADING — reference styling only */
+.collection .section-head h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0;
+  line-height: .95;
+  letter-spacing: -0.045em;
+  margin: 0 0 8px;
+  text-transform: none;
+}
+
+.collection .section-head h2::before {
+  content: 'Pick Your. ';
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(34px, 4.1vw, 58px);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  color: #171714;
+}
+
+.collection .section-head h2::after {
+  content: 'Daily Flex.';
+  display: inline-block;
+  margin-left: .08em;
+  font-family: 'Caveat', 'Brush Script MT', 'Segoe Print', cursive;
+  font-size: clamp(38px, 4.4vw, 62px);
+  font-weight: 600;
+  line-height: .85;
+  letter-spacing: .01em;
+  color: #82a91b;
+  transform: translateY(.04em) rotate(-1.2deg);
+}
+
+.collection .section-head h2 em {
+  display: none;
+}
+
+.collection .section-head .eyebrow {
+  color: #71851d;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .collection .section-head h2::before {
+    font-size: clamp(30px, 8.2vw, 42px);
+  }
+
+  .collection .section-head h2::after {
+    font-size: clamp(34px, 8.8vw, 46px);
+  }
+}
