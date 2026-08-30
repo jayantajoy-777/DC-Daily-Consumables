@@ -1,44 +1,36 @@
-/* DC target section: category tiles -> DC Standard -> collection */
-main{display:flex;flex-direction:column}
-main>.announcement{order:1}
-main>header.nav{order:2}
-main>.hero{order:3}
-main>.wellness-strip{order:4}
-main>.ingredients-band{order:5}
-main>.collection{order:6}
-main>.how{order:7}
-main>.life{order:8}
-main>.trust{order:9}
-main>.closing{order:10}
-main>footer{order:11}
-
-/* DC Standard — compact landscape banner. */
-.ingredients-band{display:block!important;background:transparent!important;padding:0!important;margin:0 auto 14px!important;width:min(100% - 40px,1200px)!important}
-.ingredients-band .ingredient-layout{display:grid!important;grid-template-columns:30% 70%!important;min-height:125px!important;height:125px!important;border-radius:14px!important;overflow:hidden!important;background:#eef2e4!important;box-shadow:none!important;padding:0!important}
-.ingredients-band .ingredient-copy{padding:14px 20px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;background:#eef2e4!important;min-width:0!important}
-.ingredients-band .ingredient-copy .eyebrow{margin:0 0 4px!important;font-size:8px!important;letter-spacing:.14em!important}
-.ingredients-band .ingredient-copy h2{margin:0 0 6px!important;font-size:clamp(20px,2.4vw,30px)!important;line-height:.94!important;letter-spacing:-.045em!important}
-.ingredients-band .ingredient-copy h2 em{font-style:normal!important}
-.ingredients-band .ingredient-copy>p:not(.eyebrow){margin:0!important;font-size:9px!important;line-height:1.25!important;max-width:250px!important}
+/* Below category tiles only — hero/slideshow intentionally untouched. */
+.ingredients-band{display:block!important;background:#0b0f0b!important;padding:0!important;margin:0 auto 16px!important;width:min(100% - 32px,1200px)!important}
+.ingredients-band .ingredient-layout{display:grid!important;grid-template-columns:34% 66%!important;height:150px!important;min-height:150px!important;border-radius:16px!important;overflow:hidden!important;background:#101610!important;padding:0!important}
+.ingredients-band .ingredient-copy{padding:18px 22px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;background:linear-gradient(110deg,#080b08,#172817)!important;color:#fff!important;min-width:0!important}
+.ingredients-band .ingredient-copy .eyebrow{margin:0 0 5px!important;font-size:8px!important;letter-spacing:.15em!important;color:#a5d52c!important}
+.ingredients-band .ingredient-copy h2{margin:0 0 7px!important;font-size:clamp(21px,3vw,34px)!important;line-height:.92!important;letter-spacing:-.05em!important;color:#fff!important}
+.ingredients-band .ingredient-copy h2 em{font-style:normal!important;color:#a8df2c!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){margin:0!important;font-size:8.5px!important;line-height:1.28!important;max-width:250px!important;color:rgba(255,255,255,.72)!important}
 .ingredients-band .ingredient-copy .btn{display:none!important}
-.ingredients-band .ingredient-grid{display:block!important;min-height:125px!important;height:125px!important;background:url('/dc-wellness.jpg') center/cover no-repeat!important;padding:0!important;font-size:0!important}
+.ingredients-band .ingredient-grid{position:relative!important;display:block!important;height:150px!important;min-height:150px!important;background:linear-gradient(90deg,rgba(5,10,5,.25),rgba(5,10,5,.05)),url('/dc-wellness.jpg') center/cover no-repeat!important;padding:0!important}
 .ingredients-band .ingredient-grid>*{display:none!important}
 
+/* Small performance callouts layered into the compact visual area without increasing height. */
+.ingredients-band .ingredient-grid:before{content:'VEGAN PROTEIN  •  CREATINE  •  ORGANIC INGREDIENTS';position:absolute;left:12px;bottom:10px;z-index:2;padding:6px 9px;border-radius:999px;background:rgba(8,12,8,.82);color:#b1e83b;font-size:6px;letter-spacing:.09em;font-weight:700}
+.ingredients-band .ingredient-grid:after{content:'24G PLANT PROTEIN   +   3G CREATINE';position:absolute;right:12px;top:10px;z-index:2;padding:6px 9px;border-radius:999px;background:#a8df2c;color:#10150c;font-size:6px;letter-spacing:.08em;font-weight:800}
+
 @media(max-width:700px){
-  .ingredients-band{width:calc(100% - 32px)!important;margin-bottom:12px!important}
-  .ingredients-band .ingredient-layout{grid-template-columns:38% 62%!important;height:92px!important;min-height:92px!important;border-radius:12px!important}
-  .ingredients-band .ingredient-copy{padding:8px 8px!important}
-  .ingredients-band .ingredient-copy .eyebrow{font-size:5.5px!important;line-height:1.1!important;letter-spacing:.09em!important;margin-bottom:2px!important;max-width:100px!important}
-  .ingredients-band .ingredient-copy h2{font-size:13px!important;line-height:.92!important;letter-spacing:-.04em!important;margin-bottom:4px!important}
-  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5.7px!important;line-height:1.15!important;max-width:100%!important}
-  .ingredients-band .ingredient-grid{height:92px!important;min-height:92px!important;background-position:center!important}
+ .ingredients-band{width:calc(100% - 24px)!important;margin-bottom:12px!important}
+ .ingredients-band .ingredient-layout{grid-template-columns:42% 58%!important;height:105px!important;min-height:105px!important;border-radius:12px!important}
+ .ingredients-band .ingredient-copy{padding:10px 10px!important}
+ .ingredients-band .ingredient-copy .eyebrow{font-size:5px!important;margin-bottom:3px!important}
+ .ingredients-band .ingredient-copy h2{font-size:14px!important;line-height:.92!important;margin-bottom:5px!important}
+ .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5.4px!important;line-height:1.2!important}
+ .ingredients-band .ingredient-grid{height:105px!important;min-height:105px!important}
+ .ingredients-band .ingredient-grid:before{left:7px;bottom:7px;padding:4px 6px;font-size:4.5px!important}
+ .ingredients-band .ingredient-grid:after{right:7px;top:7px;padding:4px 6px;font-size:4.5px!important}
 }
 
 @media(max-width:380px){
-  .ingredients-band{width:calc(100% - 24px)!important}
-  .ingredients-band .ingredient-layout{grid-template-columns:40% 60%!important;height:84px!important;min-height:84px!important}
-  .ingredients-band .ingredient-copy{padding:7px 7px!important}
-  .ingredients-band .ingredient-copy h2{font-size:12px!important}
-  .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5.2px!important}
-  .ingredients-band .ingredient-grid{height:84px!important;min-height:84px!important}
+ .ingredients-band{width:calc(100% - 20px)!important}
+ .ingredients-band .ingredient-layout{grid-template-columns:43% 57%!important;height:96px!important;min-height:96px!important}
+ .ingredients-band .ingredient-copy{padding:8px 8px!important}
+ .ingredients-band .ingredient-copy h2{font-size:12px!important}
+ .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5px!important}
+ .ingredients-band .ingredient-grid{height:96px!important;min-height:96px!important}
 }
