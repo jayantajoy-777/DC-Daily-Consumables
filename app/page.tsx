@@ -74,7 +74,17 @@ export default function Home() {
         </a>)}
       </div>
     </section>
-    <section className="collection wrap" id="collection"><div className="section-head"><div><p className="eyebrow">THE DC COLLECTION</p><h2>PICK YOUR <em>DAILY FLEX.</em></h2><p>19 products. One daily wellness system.</p></div><a className="btn dark" href="#collection">VIEW ALL PRODUCTS →</a></div><div className="product-grid">{products.map(product => <article className={`product-card ${product.tone}`} key={product.name}><div className="product-art"><Pouch product={product}/></div><h3>{product.name}</h3><p>{product.sub}</p><div className="price-row"><strong>{product.note}</strong><b>{product.price}</b></div><button>ADD TO CART <span>🛒</span></button></article>)}</div></section>
+    <section className="collection wrap" id="collection"><div className="section-head"><div><p className="eyebrow">THE DC COLLECTION</p><h2>PICK YOUR <em>DAILY FLEX.</em></h2><p>19 products. One daily wellness system.</p></div><a className="btn dark" href="#collection">VIEW ALL PRODUCTS →</a></div><div className="product-grid">{products.map(product => <article className={`product-card ${product.tone}`} key={product.name}><div className="product-art">
+  {product.name === 'DC PLANT PROTEIN' ? (
+    <img
+      src="/plant-protein-banner.PNG"
+      alt="DC Plant Protein with Creatine"
+      className="plant-protein-banner"
+    />
+  ) : (
+    <Pouch product={product}/>
+  )}
+</div><h3>{product.name}</h3><p>{product.sub}</p><div className="price-row"><strong>{product.note}</strong><b>{product.price}</b></div><button>ADD TO CART <span>🛒</span></button></article>)}</div></section>
     <section className="ingredients-band" id="ingredients"><div className="wrap ingredient-layout"><div className="ingredient-copy"><p className="eyebrow">WHAT GOES IN</p><h2>REAL INGREDIENTS.<br/><em>REAL NUTRITION.</em></h2><p>Whole-food ingredients, purposeful botanicals and plant-based nutrition—presented clearly.</p><a className="btn light" href="#ingredients">SEE ALL INGREDIENTS →</a></div><div className="ingredient-grid">{ingredients.map(([name, cls, tone]) => <div className="ingredient" key={name}><span className={`ingredient-orb ${tone}`}>{cls === 'peas' ? '●●●' : cls === 'moringa' ? '✦' : cls === 'oats' ? '◌' : cls === 'amla' ? '●' : cls === 'flax' ? '•••' : cls === 'beet' ? '◉' : '⌁'}</span><b>{name}</b></div>)}</div></div></section>
     <section className="how wrap"><div className="how-title"><p className="eyebrow">HOW TO USE</p><h2>Simple.<br/><em>Quick.</em><br/>Effective.</h2></div><div className="steps"><div><b>01</b><h3>SCOOP</h3><p>Take 1–2 scoops of your DC powder.</p></div><div><b>02</b><h3>MIX</h3><p>Add 200–300 ml water or milk.</p></div><div><b>03</b><h3>SHAKE</h3><p>Shake well until smooth.</p></div><div><b>04</b><h3>DRINK</h3><p>Fuel your day. Feel the difference.</p></div></div></section>
     <section className="life wrap"><div className="life-copy"><p className="eyebrow">BUILT FOR REAL LIFE</p><h2>Not just the gym.<br/><em>Your whole day.</em></h2><p>Morning routines, work days, workouts, travel and everything between.</p><a className="btn primary" href="#find">FIND MY FLEX →</a></div><div className="life-collage"><div className="life-card work">WORK<span>Clean nutrition<br/>to stay sharp.</span></div><div className="life-card gym">MOVE<span>Fuel performance.<br/>Push limits.</span></div><div className="life-card night">REST<span>Recover. Reset.<br/>Repeat.</span></div></div></section>
