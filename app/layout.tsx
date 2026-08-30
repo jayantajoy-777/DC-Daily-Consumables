@@ -17,15 +17,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return <html lang="en"><body>
     <HeroShowcase />
     <style>{`
-      /* Restore the original DC visual slideshow between the header and homepage content. */
+      /* Keep the legacy CSS hero hidden. The uploaded visual banner is positioned
+         by HeroShowcase immediately after the Shop By Need section. */
       body{position:relative}
-      body > .dc-showcase{position:absolute!important;top:106px;left:0;right:0;width:min(100%,1400px);margin:0 auto!important;z-index:30}
       body > main > section.hero{display:none!important}
-      body > main > section.wellness-strip{margin-top:500px!important}
-      @media(max-width:760px){
-        body > .dc-showcase{top:106px;width:100%}
-        body > main > section.wellness-strip{margin-top:460px!important}
-      }
+      body > .dc-showcase{position:relative!important;top:auto!important;left:auto!important;right:auto!important}
+      body > main > section.wellness-strip{margin-top:12px!important;margin-bottom:20px!important}
     `}</style>
     {children}
   </body></html>;
