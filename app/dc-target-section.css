@@ -1,36 +1,43 @@
-/* Below category tiles only — hero/slideshow intentionally untouched. */
-.ingredients-band{display:block!important;background:#0b0f0b!important;padding:0!important;margin:0 auto 16px!important;width:min(100% - 32px,1200px)!important}
-.ingredients-band .ingredient-layout{display:grid!important;grid-template-columns:34% 66%!important;height:150px!important;min-height:150px!important;border-radius:16px!important;overflow:hidden!important;background:#101610!important;padding:0!important}
-.ingredients-band .ingredient-copy{padding:18px 22px!important;display:flex!important;flex-direction:column!important;justify-content:center!important;background:linear-gradient(110deg,#080b08,#172817)!important;color:#fff!important;min-width:0!important}
-.ingredients-band .ingredient-copy .eyebrow{margin:0 0 5px!important;font-size:8px!important;letter-spacing:.15em!important;color:#a5d52c!important}
-.ingredients-band .ingredient-copy h2{margin:0 0 7px!important;font-size:clamp(21px,3vw,34px)!important;line-height:.92!important;letter-spacing:-.05em!important;color:#fff!important}
-.ingredients-band .ingredient-copy h2 em{font-style:normal!important;color:#a8df2c!important}
-.ingredients-band .ingredient-copy>p:not(.eyebrow){margin:0!important;font-size:8.5px!important;line-height:1.28!important;max-width:250px!important;color:rgba(255,255,255,.72)!important}
-.ingredients-band .ingredient-copy .btn{display:none!important}
-.ingredients-band .ingredient-grid{position:relative!important;display:block!important;height:150px!important;min-height:150px!important;background:linear-gradient(90deg,rgba(5,10,5,.25),rgba(5,10,5,.05)),url('/dc-wellness.jpg') center/cover no-repeat!important;padding:0!important}
+/* BELOW CATEGORY TILES ONLY — HERO / SLIDESHOW IS INTENTIONALLY UNTOUCHED. */
+.ingredients-band{display:block!important;position:relative!important;height:174px!important;min-height:174px!important;max-height:174px!important;overflow:hidden!important;background:#050805!important;padding:0!important;margin:0 auto 16px!important;width:min(100% - 32px,1200px)!important;border-radius:18px!important}
+.ingredients-band .ingredient-layout{display:block!important;position:relative!important;width:100%!important;height:100%!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important;border:1px solid rgba(167,223,44,.35)!important;border-radius:18px!important;overflow:hidden!important;background:#071007!important}
+.ingredients-band .ingredient-grid{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;min-height:0!important;background-image:linear-gradient(90deg,rgba(4,8,4,.98) 0%,rgba(4,8,4,.96) 29%,rgba(4,8,4,.55) 48%,rgba(4,8,4,.08) 75%),url('https://images.unsplash.com/photo-1709315957145-a4bad1feef28?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=80&w=1800')!important;background-size:cover!important;background-position:center 48%!important;padding:0!important}
 .ingredients-band .ingredient-grid>*{display:none!important}
+.ingredients-band .ingredient-copy{position:absolute!important;inset:0!important;z-index:3!important;display:block!important;width:100%!important;height:100%!important;min-width:0!important;padding:24px 30px 20px 36%!important;background:transparent!important;color:#fff!important}
+.ingredients-band .ingredient-copy .eyebrow{font-size:0!important;line-height:1!important;margin:0 0 7px!important;color:#a9df2d!important;letter-spacing:.08em!important;font-weight:800!important}
+.ingredients-band .ingredient-copy .eyebrow:after{content:'PERFORMANCE + RECOVERY';font-size:8px!important}
+.ingredients-band .ingredient-copy h2{font-size:0!important;line-height:.9!important;letter-spacing:-.045em!important;margin:0 0 8px!important;color:#fff!important;max-width:430px!important}
+.ingredients-band .ingredient-copy h2:after{content:'VEGAN PROTEIN\\A WITH CREATINE';white-space:pre!important;font-family:'Space Grotesk'!important;font-size:clamp(25px,3.2vw,40px)!important;line-height:.88!important;letter-spacing:-.05em!important;color:#fff!important}
+.ingredients-band .ingredient-copy h2 em{display:none!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:0!important;line-height:1.3!important;margin:0!important;color:rgba(255,255,255,.82)!important;max-width:390px!important}
+.ingredients-band .ingredient-copy>p:not(.eyebrow):after{content:'Complete plant-based protein blended with 3g Creatine Monohydrate for strength, muscle growth and recovery.';font-size:9px!important}
+.ingredients-band .ingredient-copy .btn{display:none!important}
 
-/* Small performance callouts layered into the compact visual area without increasing height. */
-.ingredients-band .ingredient-grid:before{content:'VEGAN PROTEIN  •  CREATINE  •  ORGANIC INGREDIENTS';position:absolute;left:12px;bottom:10px;z-index:2;padding:6px 9px;border-radius:999px;background:rgba(8,12,8,.82);color:#b1e83b;font-size:6px;letter-spacing:.09em;font-weight:700}
-.ingredients-band .ingredient-grid:after{content:'24G PLANT PROTEIN   +   3G CREATINE';position:absolute;right:12px;top:10px;z-index:2;padding:6px 9px;border-radius:999px;background:#a8df2c;color:#10150c;font-size:6px;letter-spacing:.08em;font-weight:800}
+/* Compact product pouch approximation, kept inside this section only. */
+.ingredients-band .ingredient-copy:before{content:'DC\\A DAILY CONSUMABLES\\A\\A PLANT PROTEIN\\A\\A VEGAN PROTEIN\\A WITH CREATINE\\A\\A 24g     3g\\A PROTEIN  CREATINE';white-space:pre!important;position:absolute!important;left:7%!important;top:18px!important;width:122px!important;height:138px!important;border-radius:9px!important;background:linear-gradient(180deg,#252525,#101010)!important;border:1px solid #444!important;box-shadow:0 12px 24px rgba(0,0,0,.4)!important;color:#f4f4f0!important;padding:12px 10px!important;font-family:'Space Grotesk'!important;font-size:7px!important;line-height:1.35!important;letter-spacing:.04em!important;z-index:-1!important;text-align:left!important}
+
+/* Organic-ingredient proof strip over the gym visual. */
+.ingredients-band .ingredient-grid:after{content:'ORGANIC INGREDIENTS  •  PEAS  •  OATS  •  FLAX  •  COCOA';position:absolute!important;inset:auto 14px 12px auto!important;width:auto!important;height:auto!important;padding:6px 9px!important;border-radius:999px!important;background:rgba(5,9,5,.78)!important;color:#b1e83b!important;font-size:6px!important;letter-spacing:.08em!important;font-weight:800!important}
+.ingredients-band .ingredient-grid:before{content:'24G PLANT PROTEIN   +   3G CREATINE';position:absolute!important;inset:12px 14px auto auto!important;width:auto!important;height:auto!important;padding:6px 9px!important;border-radius:999px!important;background:#a8df2c!important;color:#10150c!important;font-size:6px!important;letter-spacing:.08em!important;font-weight:900!important;z-index:2!important}
 
 @media(max-width:700px){
- .ingredients-band{width:calc(100% - 24px)!important;margin-bottom:12px!important}
- .ingredients-band .ingredient-layout{grid-template-columns:42% 58%!important;height:105px!important;min-height:105px!important;border-radius:12px!important}
- .ingredients-band .ingredient-copy{padding:10px 10px!important}
- .ingredients-band .ingredient-copy .eyebrow{font-size:5px!important;margin-bottom:3px!important}
- .ingredients-band .ingredient-copy h2{font-size:14px!important;line-height:.92!important;margin-bottom:5px!important}
- .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5.4px!important;line-height:1.2!important}
- .ingredients-band .ingredient-grid{height:105px!important;min-height:105px!important}
- .ingredients-band .ingredient-grid:before{left:7px;bottom:7px;padding:4px 6px;font-size:4.5px!important}
- .ingredients-band .ingredient-grid:after{right:7px;top:7px;padding:4px 6px;font-size:4.5px!important}
+ .ingredients-band{height:118px!important;min-height:118px!important;max-height:118px!important;width:calc(100% - 24px)!important;margin-bottom:12px!important;border-radius:13px!important}
+ .ingredients-band .ingredient-layout{height:118px!important;border-radius:13px!important}
+ .ingredients-band .ingredient-grid{height:118px!important;background-position:center 48%!important}
+ .ingredients-band .ingredient-copy{height:118px!important;padding:14px 10px 10px 42%!important}
+ .ingredients-band .ingredient-copy .eyebrow{margin-bottom:4px!important}
+ .ingredients-band .ingredient-copy .eyebrow:after{font-size:5px!important}
+ .ingredients-band .ingredient-copy h2:after{font-size:17px!important;line-height:.88!important}
+ .ingredients-band .ingredient-copy>p:not(.eyebrow):after{font-size:5.4px!important;line-height:1.15!important}
+ .ingredients-band .ingredient-copy:before{left:4%!important;top:10px!important;width:74px!important;height:98px!important;padding:8px 7px!important;font-size:4.5px!important;line-height:1.28!important;border-radius:7px!important}
+ .ingredients-band .ingredient-grid:before{inset:7px 7px auto auto!important;padding:4px 6px!important;font-size:4px!important}
+ .ingredients-band .ingredient-grid:after{inset:auto 7px 7px auto!important;padding:4px 6px!important;font-size:3.8px!important}
 }
 
 @media(max-width:380px){
- .ingredients-band{width:calc(100% - 20px)!important}
- .ingredients-band .ingredient-layout{grid-template-columns:43% 57%!important;height:96px!important;min-height:96px!important}
- .ingredients-band .ingredient-copy{padding:8px 8px!important}
- .ingredients-band .ingredient-copy h2{font-size:12px!important}
- .ingredients-band .ingredient-copy>p:not(.eyebrow){font-size:5px!important}
- .ingredients-band .ingredient-grid{height:96px!important;min-height:96px!important}
+ .ingredients-band{height:110px!important;min-height:110px!important;max-height:110px!important;width:calc(100% - 20px)!important}
+ .ingredients-band .ingredient-layout,.ingredients-band .ingredient-grid,.ingredients-band .ingredient-copy{height:110px!important}
+ .ingredients-band .ingredient-copy{padding-left:43%!important}
+ .ingredients-band .ingredient-copy h2:after{font-size:15px!important}
+ .ingredients-band .ingredient-copy:before{width:68px!important;height:92px!important}
 }
