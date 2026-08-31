@@ -43,18 +43,18 @@
 @media(max-width:390px){#collection .product-art{height:210px}#collection .product-art .pouch{width:100px;height:160px}}
 @media(prefers-reduced-motion:reduce){#collection .product-card,#collection .product-art .pouch,#collection .section-head .btn.dark{transition:none}}
 
-/* Approved premium redesign — View All Products CTA only. */
-#collection .section-head .btn.dark{position:relative;display:flex;align-items:center;gap:16px;width:100%;max-width:650px;min-width:0;min-height:96px;box-sizing:border-box;padding:12px 18px;border:1px solid rgba(171,214,24,.55);border-radius:20px;overflow:hidden;background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.12),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.035) 9px 10px),linear-gradient(135deg,#161813,#080907 70%,#11140d);color:transparent;box-shadow:0 14px 30px rgba(20,20,15,.18),inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 30px rgba(164,205,20,.04);text-align:left}
-#collection .section-head .btn.dark::before{content:'DC\A —';white-space:pre;display:flex;flex:0 0 60px;width:60px;height:60px;align-items:center;justify-content:center;border:2px solid #b6dc1d;border-radius:50%;background:#10120e;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:22px;line-height:.75;font-weight:800;letter-spacing:-.09em;box-shadow:0 0 0 1px rgba(182,220,29,.12),0 0 24px rgba(182,220,29,.08)}
-#collection .section-head .btn.dark::after{content:'DISCOVER THE COLLECTION\A VIEW ALL PRODUCTS  →\A EXPLORE ALL 19 DC PRODUCTS';white-space:pre;display:block;flex:1;min-width:0;max-width:100%;overflow:hidden;color:#fff;font-family:Georgia,'Times New Roman',serif;font-size:clamp(14px,1.8vw,24px);line-height:1.08;letter-spacing:-.02em;text-shadow:0 1px 12px rgba(255,255,255,.06)}
-#collection .section-head .btn.dark:hover{background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.16),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.04) 9px 10px),linear-gradient(135deg,#1a1d14,#080907 70%,#12160c);border-color:#c1e52a;box-shadow:0 18px 36px rgba(20,20,15,.22),0 0 22px rgba(177,218,27,.08),inset 0 1px 0 rgba(255,255,255,.08)}
+/* Approved premium CTA — only the View All Products section. */
+#collection .section-head .btn.dark{position:relative;display:flex;align-items:center;gap:14px;width:100%;max-width:650px;min-width:0;min-height:82px;height:82px;box-sizing:border-box;padding:9px 14px;border:1px solid rgba(171,214,24,.55);border-radius:17px;overflow:hidden;background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.12),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.035) 9px 10px),linear-gradient(135deg,#161813,#080907 70%,#11140d);color:transparent;box-shadow:0 12px 26px rgba(20,20,15,.17),inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 28px rgba(164,205,20,.04);text-align:left}
+#collection .section-head .btn.dark::before{content:'DC';display:flex;flex:0 0 52px;width:52px;height:52px;align-items:center;justify-content:center;border:2px solid #b6dc1d;border-radius:50%;background:#10120e;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:18px;line-height:1;font-weight:800;letter-spacing:-.09em;box-shadow:0 0 0 1px rgba(182,220,29,.12),0 0 22px rgba(182,220,29,.08)}
+#collection .section-head .btn.dark::after{content:'VIEW ALL PRODUCTS  →';white-space:nowrap;display:block;flex:1;min-width:0;overflow:hidden;color:#fff;font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(15px,1.9vw,24px);line-height:1;font-weight:700;letter-spacing:-.035em;text-shadow:0 1px 12px rgba(255,255,255,.06)}
+#collection .section-head .btn.dark:hover{background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.16),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.04) 9px 10px),linear-gradient(135deg,#1a1d14,#080907 70%,#12160c);border-color:#c1e52a;box-shadow:0 16px 32px rgba(20,20,15,.21),0 0 22px rgba(177,218,27,.08),inset 0 1px 0 rgba(255,255,255,.08)}
 @media(max-width:760px){
-#collection .section-head .btn.dark{width:100%;max-width:100%;min-height:82px;height:82px;padding:9px 12px;gap:10px;border-radius:17px;overflow:hidden}
-#collection .section-head .btn.dark::before{flex:0 0 50px;width:50px;height:50px;font-size:18px}
-#collection .section-head .btn.dark::after{font-size:clamp(11px,3.2vw,15px);line-height:1.06;letter-spacing:-.01em;overflow:hidden}
+#collection .section-head .btn.dark{width:100%;max-width:100%;min-width:0;min-height:66px;height:66px;padding:8px 10px;gap:9px;border-radius:14px}
+#collection .section-head .btn.dark::before{flex:0 0 44px;width:44px;height:44px;font-size:16px}
+#collection .section-head .btn.dark::after{font-size:clamp(12px,3.6vw,15px);line-height:1;letter-spacing:-.025em}
 }
 @media(max-width:390px){
-#collection .section-head .btn.dark{min-height:76px;height:76px;padding:8px 10px;gap:8px;border-radius:15px}
-#collection .section-head .btn.dark::before{flex-basis:46px;width:46px;height:46px;font-size:17px}
+#collection .section-head .btn.dark{min-height:62px;height:62px;padding:7px 8px;gap:8px;border-radius:13px}
+#collection .section-head .btn.dark::before{flex-basis:40px;width:40px;height:40px;font-size:15px}
 #collection .section-head .btn.dark::after{font-size:11px}
 }
