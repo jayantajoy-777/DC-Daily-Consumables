@@ -1,0 +1,44 @@
+/* DC — View All Products visual system. Scoped only to #collection. */
+#collection.collection{position:relative;padding:clamp(34px,5vw,72px) 0 clamp(48px,6vw,84px)}
+#collection.collection::before{content:'19 PRODUCTS  •  ONE DAILY SYSTEM';display:inline-flex;align-items:center;min-height:30px;padding:0 13px;border:1px solid #d9dfb8;border-radius:999px;background:#f4f7e7;color:#71851d;font-size:9px;font-weight:800;letter-spacing:.14em;margin-bottom:14px}
+#collection .section-head{position:relative;align-items:flex-end;gap:24px;padding-bottom:22px;margin-bottom:24px;border-bottom:1px solid var(--line)}
+#collection .section-head h2{font-size:clamp(34px,4.6vw,62px);letter-spacing:-.07em;line-height:.88;margin-bottom:12px}
+#collection .section-head>div>p:last-child{font-size:13px;max-width:440px}
+#collection .section-head .btn.dark{border-radius:999px;padding:15px 20px;white-space:nowrap;box-shadow:0 10px 24px rgba(20,20,15,.12);transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+#collection .section-head .btn.dark:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(20,20,15,.18)}
+#collection .product-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;align-items:stretch}
+#collection .product-card{position:relative;display:flex;flex-direction:column;min-width:0;border-radius:24px;padding:10px;border:1px solid rgba(42,43,31,.09);box-shadow:0 8px 22px rgba(44,38,25,.055);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+#collection .product-card::before{content:'DC';position:absolute;top:13px;left:14px;z-index:2;font-family:'Space Grotesk';font-weight:700;font-size:9px;letter-spacing:-.08em;opacity:.45}
+#collection .product-card:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(44,38,25,.13);border-color:#cbd78b}
+#collection .product-art{height:clamp(245px,24vw,330px);border-radius:18px;overflow:hidden;position:relative;background:rgba(255,255,255,.42)}
+#collection .product-art::after{content:'VIEW PRODUCT  →';position:absolute;left:12px;right:12px;bottom:10px;padding:9px 11px;border-radius:999px;background:rgba(25,25,22,.9);color:#fff;text-align:center;font-size:8px;font-weight:800;letter-spacing:.12em;opacity:0;transform:translateY(8px);transition:opacity .2s ease,transform .2s ease;pointer-events:none}
+#collection .product-card:hover .product-art::after{opacity:1;transform:translateY(0)}
+#collection .product-art .pouch{width:min(145px,58%);height:min(220px,82%);box-shadow:0 22px 34px rgba(30,29,24,.18);transition:transform .25s ease}
+#collection .product-card:hover .product-art .pouch{transform:translateY(-5px) rotate(-1.5deg)}
+#collection .plant-protein-banner{width:100%;height:100%;object-fit:cover;object-position:center;display:block;border-radius:18px}
+#collection .product-card h3{font-family:'Space Grotesk';font-size:14px;letter-spacing:-.02em;margin:15px 4px 5px}
+#collection .product-card p{min-height:28px;line-height:1.35;margin:0 4px 12px}
+#collection .price-row{margin-top:auto;padding:11px 4px 12px;border-top:1px solid rgba(40,40,30,.09)}
+#collection .price-row b{color:#779414;font-size:15px}
+#collection .product-card button{border-radius:12px;padding:13px;cursor:pointer;transition:transform .18s ease,background .18s ease}
+#collection .product-card button:hover{transform:translateY(-1px);background:#2a2a24}
+@media(max-width:1050px){#collection .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){
+#collection.collection{padding:34px 0 52px}
+#collection.collection::before{font-size:8px;margin-left:2px}
+#collection .section-head{align-items:flex-start;flex-direction:column;gap:16px;padding-bottom:18px}
+#collection .section-head h2{font-size:40px}
+#collection .section-head .btn.dark{width:100%;justify-content:center}
+#collection .product-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#collection .product-card{border-radius:18px;padding:8px}
+#collection .product-art{height:235px;border-radius:14px}
+#collection .product-art::after{display:none}
+#collection .product-art .pouch{width:112px;height:175px}
+#collection .product-card h3{font-size:11px;margin-top:12px}
+#collection .product-card p{font-size:9px;min-height:25px}
+#collection .price-row{font-size:9px;padding:9px 3px}
+#collection .price-row b{font-size:13px}
+#collection .product-card button{font-size:9px;padding:11px 7px}
+}
+@media(max-width:390px){#collection .product-art{height:210px}#collection .product-art .pouch{width:100px;height:160px}}
+@media(prefers-reduced-motion:reduce){#collection .product-card,#collection .product-art .pouch,#collection .section-head .btn.dark{transition:none}}
