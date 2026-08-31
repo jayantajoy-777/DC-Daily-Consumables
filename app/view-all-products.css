@@ -1,6 +1,6 @@
 /* DC — View All Products visual system. Scoped only to #collection. */
 #collection.collection{position:relative;padding:clamp(34px,5vw,72px) 0 clamp(48px,6vw,84px)}
-#collection.collection::before{content:'19 PRODUCTS  •  ONE DAILY SYSTEM';display:inline-flex;align-items:center;min-height:30px;padding:0 13px;border:1px solid #d9dfb8;border-radius:999px;background:#f4f7e7;color:#71851d;font-size:9px;font-weight:800;letter-spacing:.14em;margin-bottom:14px}
+#collection.collection::before{display:none}
 #collection .section-head{position:relative;align-items:flex-end;gap:24px;padding-bottom:22px;margin-bottom:24px;border-bottom:1px solid var(--line)}
 #collection .section-head h2{font-size:clamp(34px,4.6vw,62px);letter-spacing:-.07em;line-height:.88;margin-bottom:12px}
 #collection .section-head>div>p:last-child{font-size:13px;max-width:440px}
@@ -25,7 +25,6 @@
 @media(max-width:1050px){#collection .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){
 #collection.collection{padding:34px 0 52px}
-#collection.collection::before{font-size:8px;margin-left:2px}
 #collection .section-head{align-items:flex-start;flex-direction:column;gap:16px;padding-bottom:18px}
 #collection .section-head h2{font-size:40px}
 #collection .section-head .btn.dark{width:100%;justify-content:center}
@@ -44,17 +43,18 @@
 @media(prefers-reduced-motion:reduce){#collection .product-card,#collection .product-art .pouch,#collection .section-head .btn.dark{transition:none}}
 
 /* Approved premium CTA — only the View All Products section. */
-#collection .section-head .btn.dark{position:relative;display:flex;align-items:center;gap:14px;width:100%;max-width:650px;min-width:0;min-height:82px;height:82px;box-sizing:border-box;padding:9px 14px;border:1px solid rgba(171,214,24,.55);border-radius:17px;overflow:hidden;background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.12),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.035) 9px 10px),linear-gradient(135deg,#161813,#080907 70%,#11140d);color:transparent;box-shadow:0 12px 26px rgba(20,20,15,.17),inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 28px rgba(164,205,20,.04);text-align:left}
+#collection .section-head .btn.dark{position:relative;display:flex;align-items:center;gap:14px;width:100%;max-width:650px;min-width:0;min-height:82px;height:82px;box-sizing:border-box;padding:9px 14px;border:1px solid rgba(171,214,24,.55);border-radius:17px;overflow:hidden;background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.12),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.035) 9px 10px),linear-gradient(135deg,#161813,#080907 70%,#11140d);color:#fff;box-shadow:0 12px 26px rgba(20,20,15,.17),inset 0 1px 0 rgba(255,255,255,.07),inset 0 0 28px rgba(164,205,20,.04);text-align:left}
 #collection .section-head .btn.dark::before{content:'DC';display:flex;flex:0 0 52px;width:52px;height:52px;align-items:center;justify-content:center;border:2px solid #b6dc1d;border-radius:50%;background:#10120e;color:#fff;font-family:'Space Grotesk',sans-serif;font-size:18px;line-height:1;font-weight:800;letter-spacing:-.09em;box-shadow:0 0 0 1px rgba(182,220,29,.12),0 0 22px rgba(182,220,29,.08)}
-#collection .section-head .btn.dark::after{content:'VIEW ALL PRODUCTS  →';white-space:nowrap;display:block;flex:1;min-width:0;overflow:hidden;color:#fff;font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(15px,1.9vw,24px);line-height:1;font-weight:700;letter-spacing:-.035em;text-shadow:0 1px 12px rgba(255,255,255,.06)}
+#collection .section-head .btn.dark::after{content:'19 PRODUCTS  •  ONE DAILY SYSTEM';position:absolute;left:81px;top:14px;color:#b6dc1d;font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(7px,1vw,10px);line-height:1;font-weight:700;letter-spacing:.14em;white-space:nowrap;pointer-events:none}
+#collection .section-head .btn.dark{font-family:'Space Grotesk',Arial,sans-serif;font-size:clamp(15px,1.9vw,24px);line-height:1;font-weight:700;letter-spacing:-.035em;text-shadow:0 1px 12px rgba(255,255,255,.06)}
 #collection .section-head .btn.dark:hover{background:radial-gradient(circle at 18% 50%,rgba(181,226,24,.16),transparent 25%),repeating-radial-gradient(ellipse at 88% 50%,transparent 0 8px,rgba(255,255,255,.04) 9px 10px),linear-gradient(135deg,#1a1d14,#080907 70%,#12160c);border-color:#c1e52a;box-shadow:0 16px 32px rgba(20,20,15,.21),0 0 22px rgba(177,218,27,.08),inset 0 1px 0 rgba(255,255,255,.08)}
 @media(max-width:760px){
-#collection .section-head .btn.dark{width:100%;max-width:100%;min-width:0;min-height:66px;height:66px;padding:8px 10px;gap:9px;border-radius:14px}
+#collection .section-head .btn.dark{width:100%;max-width:100%;min-width:0;min-height:66px;height:66px;padding:8px 10px;gap:9px;border-radius:14px;font-size:clamp(12px,3.6vw,15px);letter-spacing:-.025em}
 #collection .section-head .btn.dark::before{flex:0 0 44px;width:44px;height:44px;font-size:16px}
-#collection .section-head .btn.dark::after{font-size:clamp(12px,3.6vw,15px);line-height:1;letter-spacing:-.025em}
+#collection .section-head .btn.dark::after{left:63px;top:11px;font-size:7px;letter-spacing:.1em}
 }
 @media(max-width:390px){
-#collection .section-head .btn.dark{min-height:62px;height:62px;padding:7px 8px;gap:8px;border-radius:13px}
+#collection .section-head .btn.dark{min-height:62px;height:62px;padding:7px 8px;gap:8px;font-size:11px;border-radius:13px}
 #collection .section-head .btn.dark::before{flex-basis:40px;width:40px;height:40px;font-size:15px}
-#collection .section-head .btn.dark::after{font-size:11px}
+#collection .section-head .btn.dark::after{left:56px;top:9px;font-size:6.5px}
 }
