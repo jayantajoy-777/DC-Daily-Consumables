@@ -58,3 +58,14 @@
 #collection .section-head .btn.dark::before{flex-basis:40px;width:40px;height:40px;font-size:15px}
 #collection .section-head .btn.dark::after{left:56px;top:9px;font-size:6.5px}
 }
+
+/* Final alignment pass — scoped only to the View All Products CTA. */
+#collection .section-head .btn.dark{justify-content:flex-start!important;text-align:left!important}
+@media(max-width:760px){
+  #collection .section-head .btn.dark{justify-content:flex-start!important;padding-left:12px;padding-right:12px}
+  #collection .section-head .btn.dark::after{left:65px;top:10px}
+}
+@media(max-width:390px){
+  #collection .section-head .btn.dark{padding-left:10px;padding-right:10px}
+  #collection .section-head .btn.dark::after{left:58px;top:9px}
+}
