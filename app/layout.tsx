@@ -11,7 +11,9 @@ import './force-home-order.css';
 import './dc-target-section.css';
 import './dc-collection-heading.css';
 import './view-all-products.css';
+import './dc-product-details.css';
 import HeroShowcase from './components/HeroShowcase';
+import DCProductDetails from './components/DCProductDetails';
 
 export const metadata: Metadata = { title: 'DC | Daily Consumables', description: 'YOUR DAILY FLEX.' };
 
@@ -30,5 +32,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       }
     `}</style>
     {children}
+    <DCProductDetails />
   </body></html>;
 }
