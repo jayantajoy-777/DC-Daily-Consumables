@@ -1,0 +1,11 @@
+#collection .dc-live-grid > .product-card:not(.dc-live-card){display:none!important}
+#collection .dc-live-card{cursor:pointer;position:relative;isolation:isolate;transition:transform .25s ease,box-shadow .25s ease}
+#collection .dc-live-card:hover{transform:translateY(-7px);box-shadow:0 24px 50px rgba(24,28,18,.12)}
+#collection .dc-live-card:focus-visible{outline:3px solid #6d7e32;outline-offset:4px}
+.dc-live-pouch{height:270px;width:min(100%,205px);margin:auto;border-radius:18px 18px 24px 24px;padding:20px 17px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;box-shadow:0 22px 35px rgba(0,0,0,.15);transform:rotate(-2deg);background:linear-gradient(145deg,#d9ec63,#879e35)}
+.dc-live-pouch.amber{background:linear-gradient(145deg,#f2d58a,#b77922)}
+.dc-live-pouch.lavender{background:linear-gradient(145deg,#ded5f1,#9c8ac3)}
+.dc-live-pouch.coral{background:linear-gradient(145deg,#f2a18d,#c75f4b)}
+.dc-live-pouch.blue{background:linear-gradient(145deg,#9ed9ed,#4f94a8)}
+.dc-live-pouch div{display:flex;align-items:baseline;gap:7px}.dc-live-pouch div b{font-size:28px;letter-spacing:-2px}.dc-live-pouch div span{font-size:6px;letter-spacing:1.5px}.dc-live-pouch strong{font-size:28px;line-height:.9;letter-spacing:-1.5px;text-transform:uppercase}.dc-live-pouch small{font-size:9px;letter-spacing:.5px}.dc-live-pouch i{font-style:normal;font-size:27px}.dc-live-pouch em{font-style:normal;font-size:9px;letter-spacing:1px}
+@media(max-width:760px){.dc-live-pouch{height:235px;width:175px}.dc-live-pouch strong{font-size:24px}}
