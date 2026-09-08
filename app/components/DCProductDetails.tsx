@@ -13,49 +13,28 @@ const products: Record<string, Product> = {
   'DC HYDRATION': { name:'DC HYDRATION', eyebrow:'DAILY HYDRATION FORMULA', description:'A simple daily hydration blend designed to make staying hydrated more convenient.', tone:'blue', ingredients:[{name:'Electrolyte Minerals',role:'Hydration support',benefit:'Provide minerals involved in fluid and electrolyte balance.'},{name:'Botanical / flavour components',role:'Taste experience',benefit:'Designed to make regular water intake easier and more enjoyable.'}], howTo:['Mix the recommended serving into water.','Shake or stir until fully dispersed.','Sip throughout your normal day or around activity.'], faqs:[['Can I use it every day?','Use it according to the product label and your individual hydration needs.'],['Is it a replacement for water?','No. It is intended to complement normal water intake.']] }
 };
 
-const mediaLabels = [
-  ['01','PRODUCT HERO','Front pack / product beauty shot'],
-  ['02','BACK OF PACK','Ingredients + nutrition panel'],
-  ['03','INGREDIENTS','Key ingredient photography'],
-  ['04','IN USE','Real-life serving / preparation'],
-  ['05','LIFESTYLE','Product in a daily routine'],
-  ['06','DETAIL','Premium close-up / texture shot']
-];
+const mediaLabels = [['01','PRODUCT HERO','Front pack / product beauty shot'],['02','BACK OF PACK','Ingredients + nutrition panel'],['03','INGREDIENTS','Key ingredient photography'],['04','IN USE','Real-life serving / preparation'],['05','LIFESTYLE','Product in a daily routine'],['06','DETAIL','Premium close-up / texture shot']];
 
 export default function DCProductDetails() {
   const [product, setProduct] = useState<Product | null>(null);
   useEffect(() => {
-    const openFromTarget = (event: Event) => {
-      const target = event.target as Element | null;
-      if (!target || target.closest('[data-dc-detail-close]') || target.closest('[data-dc-detail-overlay]')) return;
-      if (target.closest('.product-card button')) return;
-      const card = target.closest('.product-card');
-      if (!card) return;
-      const heading = card.querySelector('h3')?.textContent?.trim();
-      const selected = heading ? products[heading] : undefined;
-      if (!selected) return;
-      event.preventDefault();
-      setProduct(selected);
-      document.body.classList.add('dc-detail-open');
-    };
-    document.addEventListener('pointerup', openFromTarget, true);
-    document.addEventListener('click', openFromTarget, true);
-    return () => { document.removeEventListener('pointerup', openFromTarget, true); document.removeEventListener('click', openFromTarget, true); };
+    const open = (event: Event) => { const selected = products[(event as CustomEvent<string>).detail]; if (!selected) return; setProduct(selected); document.body.classList.add('dc-detail-open'); };
+    window.addEventListener('dc:open-product', open as EventListener);
+    return () => window.removeEventListener('dc:open-product', open as EventListener);
   }, []);
-
+  useEffect(() => { if (!product) return; const key = (event: KeyboardEvent) => { if (event.key === 'Escape') close(); }; window.addEventListener('keydown', key); return () => window.removeEventListener('keydown', key); }, [product]);
   if (!product) return null;
   const close = () => { setProduct(null); document.body.classList.remove('dc-detail-open'); };
-  return <div className={`dc-product-detail ${product.tone}`} data-dc-detail-overlay role="dialog" aria-modal="true" aria-label={`${product.name} product details`}>
-    <div className="dc-detail-shell">
-      <button className="dc-detail-close" data-dc-detail-close onClick={close} aria-label="Close product details">×</button>
-      <section className="dc-detail-hero"><div className="dc-detail-visual"><div className="dc-detail-pouch"><span>DC</span><small>DAILY CONSUMABLES</small><strong>{product.name.replace('DC ','')}</strong><em>{product.eyebrow}</em><b>150 g • VEGAN</b></div></div><div className="dc-detail-intro"><p className="dc-detail-kicker">{product.eyebrow}</p><h1>{product.name}</h1><p>{product.description}</p><div className="dc-detail-buy"><span>150 g</span><strong>₹699</strong><button onClick={(e)=>e.stopPropagation()}>ADD TO CART <span>→</span></button></div></div></section>
-
-      <section className="dc-detail-section dc-media-section"><div className="dc-detail-section-head"><p className="dc-detail-kicker">PRODUCT MEDIA</p><h2>See it from <i>every angle.</i></h2><p className="dc-media-intro">Every DC product page is designed with space for six premium photos and one product video.</p></div><div className="dc-media-grid">{mediaLabels.map(([number,title,caption])=><article className="dc-media-card" key={number}><div className="dc-media-photo"><span className="dc-media-number">{number}</span><span className="dc-media-mark">DC</span><b>PHOTO</b></div><h3>{title}</h3><p>{caption}</p></article>)}<article className="dc-media-card dc-media-video"><div className="dc-media-video-frame"><span className="dc-media-number">07</span><span className="dc-play">▶</span><b>PRODUCT VIDEO</b></div><h3>VIDEO</h3><p>Formula story, preparation, lifestyle or product walkthrough.</p></article></div></section>
-
-      <section className="dc-detail-section dc-story"><p className="dc-detail-kicker">KNOW YOUR DAILY FLEX</p><h2>What’s inside, <i>and why.</i></h2><p>We believe customers should understand what they are consuming. Explore every ingredient below and see the role it plays in the formula.</p></section>
-      <section className="dc-detail-section"><div className="dc-detail-section-head"><p className="dc-detail-kicker">INGREDIENT LIBRARY</p><h2>Every ingredient has a <i>reason.</i></h2></div><div className="dc-ingredient-grid">{product.ingredients.map((ingredient)=><article className="dc-ingredient" key={ingredient.name}><div className="dc-ingredient-art"><span>✦</span></div><div><small>{ingredient.role}</small><h3>{ingredient.name}</h3>{ingredient.amount&&<b>{ingredient.amount}</b>}<p>{ingredient.benefit}</p></div></article>)}</div></section>
+  const related = Object.values(products).filter(item => item.name !== product.name).slice(0,3);
+  return <div className={`dc-product-detail ${product.tone}`} role="dialog" aria-modal="true" aria-label={`${product.name} product details`}>
+    <div className="dc-detail-shell"><button className="dc-detail-close" onClick={close} aria-label="Close product details">×</button>
+      <section className="dc-detail-hero"><div className="dc-detail-visual"><div className="dc-detail-pouch"><span>DC</span><small>DAILY CONSUMABLES</small><strong>{product.name.replace('DC ','')}</strong><em>{product.eyebrow}</em><b>150 g • VEGAN</b></div></div><div className="dc-detail-intro"><p className="dc-detail-kicker">{product.eyebrow}</p><h1>{product.name}</h1><p>{product.description}</p><div className="dc-detail-buy"><div><small>FORMAT</small><span>150 g</span></div><div><small>PRICE</small><strong>₹699</strong></div><button onClick={e=>e.stopPropagation()}>ADD TO CART <span>→</span></button></div><div className="dc-detail-trust"><span>FORMULA TRANSPARENT</span><span>DAILY FORMAT</span><span>MADE FOR ROUTINE</span></div></div></section>
+      <section className="dc-detail-section dc-media-section"><div className="dc-detail-section-head"><p className="dc-detail-kicker">PRODUCT MEDIA</p><h2>See it from <i>every angle.</i></h2><p className="dc-media-intro">Six premium photo spaces plus one product-video space. These are ready for final product photography and video assets.</p></div><div className="dc-media-grid">{mediaLabels.map(([number,title,caption])=><article className="dc-media-card" key={number}><div className={`dc-media-photo media-${number}`}><span className="dc-media-number">{number}</span><span className="dc-media-mark">DC</span><b>PHOTO</b></div><h3>{title}</h3><p>{caption}</p></article>)}<article className="dc-media-card dc-media-video"><div className="dc-media-video-frame"><span className="dc-media-number">07</span><span className="dc-play">▶</span><b>PRODUCT VIDEO</b></div><h3>VIDEO</h3><p>Formula story, preparation, lifestyle or product walkthrough.</p></article></div></section>
+      <section className="dc-detail-section dc-story"><p className="dc-detail-kicker">KNOW YOUR DAILY FLEX</p><h2>What’s inside, <i>and why.</i></h2><p>Understand the ingredients listed for this formula and the role each one plays.</p></section>
+      <section className="dc-detail-section"><div className="dc-detail-section-head"><p className="dc-detail-kicker">INGREDIENT LIBRARY</p><h2>Every ingredient has a <i>reason.</i></h2></div><div className="dc-ingredient-grid">{product.ingredients.map(ingredient=><article className="dc-ingredient" key={ingredient.name}><div className="dc-ingredient-art"><span>✦</span></div><div><small>{ingredient.role}</small><h3>{ingredient.name}</h3>{ingredient.amount&&<b>{ingredient.amount}</b>}<p>{ingredient.benefit}</p></div></article>)}</div></section>
       <section className="dc-detail-section dc-how"><p className="dc-detail-kicker">HOW TO USE</p><h2>Make it part of your <i>routine.</i></h2><div className="dc-how-grid">{product.howTo.map((step,i)=><div key={step}><span>0{i+1}</span><p>{step}</p></div>)}</div></section>
       <section className="dc-detail-section dc-faq"><p className="dc-detail-kicker">GOOD TO KNOW</p><h2>Questions, <i>answered.</i></h2>{product.faqs.map(([q,a])=><details key={q}><summary>{q}<span>+</span></summary><p>{a}</p></details>)}</section>
+      <section className="dc-detail-section dc-related"><p className="dc-detail-kicker">YOUR NEXT DAILY FLEX</p><h2>Keep building your <i>routine.</i></h2><div className="dc-related-grid">{related.map(item=><button type="button" key={item.name} onClick={()=>setProduct(item)} className={`dc-related-card ${item.tone}`}><span>{item.eyebrow}</span><strong>{item.name}</strong><small>{item.description}</small><b>EXPLORE →</b></button>)}</div></section>
       <section className="dc-detail-end"><p>YOUR DAILY FLEX.</p><h2>Understand it.<br/><i>Then make it yours.</i></h2><button onClick={close}>BACK TO THE DC COLLECTION <span>↑</span></button></section>
     </div>
   </div>;
