@@ -1,0 +1,3 @@
+/* DC ingredient icon treatment — scoped to product detail only */
+.dc-ref2 .ref2-photo-row img{display:none!important}.dc-ref2 .ref2-photo-row>div{position:relative}.dc-ref2 .ref2-photo-row>div:before{content:"";display:block;width:100%;height:115px;background-repeat:no-repeat;background-position:center;background-size:contain;mix-blend-mode:multiply;filter:saturate(1.03)}
+.dc-ref2 .ref2-photo-row>div:nth-child(1):before{background-image:url("data:image/webp;base64,PLACEHOLDER");}
