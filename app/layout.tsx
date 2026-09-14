@@ -15,7 +15,7 @@ import './dc-product-details.css';
 import './dc-product-reference.css';
 import './dc-collection-interactive.css';
 import HeroShowcase from './components/HeroShowcase';
-import DCProductDetails from './components/DCProductDetails';
+import DCProductDetailsReference from './components/DCProductDetailsReference';
 import DCCollectionInteractive from './components/DCCollectionInteractive';
 
 export const metadata: Metadata = { title: 'DC | Daily Consumables', description: 'YOUR DAILY FLEX.' };
@@ -32,6 +32,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     `}</style>
     {children}
     <DCCollectionInteractive />
-    <DCProductDetails />
+    <DCProductDetailsReference />
   </body></html>;
 }
