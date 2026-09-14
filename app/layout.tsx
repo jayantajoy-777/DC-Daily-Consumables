@@ -12,6 +12,7 @@ import './dc-target-section.css';
 import './dc-collection-heading.css';
 import './view-all-products.css';
 import './dc-product-details.css';
+import './dc-product-reference.css';
 import './dc-collection-interactive.css';
 import HeroShowcase from './components/HeroShowcase';
 import DCProductDetails from './components/DCProductDetails';
