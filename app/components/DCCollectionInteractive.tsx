@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 const products = [
-  { name: 'DC ENERGY', sub: 'Daily Energy • Performance', tone: 'lime', note: '150 g', price: '₹699' },
-  { name: 'DC WEIGHT GAIN', sub: 'Daily Weight Gainer', tone: 'amber', note: '150 g', price: '₹699' },
-  { name: 'DC PLANT PROTEIN', sub: 'Plant Protein • Creatine', tone: 'lavender', note: '150 g', price: '₹699' },
-  { name: 'DC PRE-WORKOUT', sub: 'Performance Fuel', tone: 'coral', note: '150 g', price: '₹699' },
-  { name: 'DC HYDRATION', sub: 'Daily Hydration Formula', tone: 'blue', note: '150 g', price: '₹699' },
+  { name: 'DC ENERGY', sub: 'Daily Energy • Performance', tone: 'lime', note: '150 g', price: '₹699', slug: 'dc-energy' },
+  { name: 'DC WEIGHT GAIN', sub: 'Daily Weight Gainer', tone: 'amber', note: '150 g', price: '₹699', slug: 'dc-weight-gain' },
+  { name: 'DC PLANT PROTEIN', sub: 'Plant Protein • Creatine', tone: 'lavender', note: '150 g', price: '₹699', slug: 'dc-plant-protein' },
+  { name: 'DC PRE-WORKOUT', sub: 'Performance Fuel', tone: 'coral', note: '150 g', price: '₹699', slug: 'dc-pre-workout' },
+  { name: 'DC HYDRATION', sub: 'Daily Hydration Formula', tone: 'blue', note: '150 g', price: '₹699', slug: 'dc-hydration' },
 ];
 
 function Pouch({ product }: { product: typeof products[number] }) {
@@ -25,9 +25,9 @@ export default function DCCollectionInteractive() {
     grid.classList.add('dc-live-grid'); setTarget(grid);
     return () => grid.classList.remove('dc-live-grid');
   }, []);
+  const open = (slug: string) => { window.location.href = `/products/${slug}`; };
   if (!target) return null;
-  const open = (name: string) => window.dispatchEvent(new CustomEvent('dc:open-product', { detail: name }));
-  return createPortal(<>{products.map(product => <article key={product.name} className={`product-card dc-live-card ${product.tone}`} data-dc-product={product.name} tabIndex={0} role="button" onClick={() => open(product.name)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(product.name); } }}>
+  return createPortal(<>{products.map(product => <article key={product.name} className={`product-card dc-live-card ${product.tone}`} data-dc-product={product.name} tabIndex={0} role="link" onClick={() => open(product.slug)} onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(product.slug); } }}>
     <div className="product-art"><Pouch product={product} /></div><h3>{product.name}</h3><p>{product.sub}</p>
     <div className="price-row"><strong>{product.note}</strong><b>{product.price}</b></div>
     <button type="button" onClick={e => e.stopPropagation()}>ADD TO CART <span>🛒</span></button>
