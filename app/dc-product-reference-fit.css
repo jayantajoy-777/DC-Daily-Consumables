@@ -31,4 +31,31 @@
 .ref2-overlay-pouch .ref2-pouch{transform:translateY(2px);background:linear-gradient(145deg,#fff 0%,#f4f2ec 48%,#dedbd3 100%)}
 .ref2-related-image .ref2-pouch{background:linear-gradient(145deg,#fff,#e9e6de);box-shadow:0 12px 22px rgba(0,0,0,.18)}
 @media(max-width:900px){.dc-ref2 main{max-width:760px;padding-left:18px;padding-right:18px}.dc-ref2 header{padding:0 16px}.ref2-main-photo{height:410px}}
-@media(max-width:600px){.dc-ref2 header{height:56px}.dc-ref2 main{padding:0 12px 24px}.ref2-crumb{padding:9px 2px}.ref2-main-photo{height:350px}.ref2-overlay-pouch{inset:7% 14% 2%}.ref2-pouch{width:185px;height:285px}.ref2-info h1{font-size:35px}.ref2-ingredients,.ref2-learning,.ref2-bottom{grid-template-columns:1fr}.ref2-photo-row{grid-template-columns:repeat(5,1fr);overflow:visible}.ref2-groups{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){
+  .dc-ref2 header{height:54px;padding:0 12px;position:sticky;top:0}
+  .ref2-brand{min-width:0;gap:5px}.ref2-brand b{font-size:29px;letter-spacing:-3px}.ref2-brand span{font-size:7px}
+  .dc-ref2 nav{display:none}.ref2-icons{margin-left:auto;gap:8px}.ref2-icons button{font-size:19px;padding:4px}.ref2-icons button:nth-child(1){display:none}.ref2-icons sup{font-size:8px;padding:2px 4px}
+  .dc-ref2 main{width:100%;max-width:none;padding:0 10px 24px}
+  .ref2-crumb{padding:9px 2px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ref2-hero{display:block;padding-bottom:14px;background:#fff}
+  .ref2-gallery{display:grid;grid-template-columns:48px minmax(0,1fr);gap:7px;padding:0}
+  .ref2-thumbs{gap:5px}.ref2-thumbs img{width:48px;height:48px;border-radius:6px}
+  .ref2-main-photo{height:310px;width:100%;border-radius:9px}
+  .ref2-overlay-pouch{inset:6% 17% 1%}
+  .ref2-pouch{width:155px;height:245px;border-radius:12px 12px 18px 18px;padding:18px;box-shadow:0 18px 30px rgba(18,24,22,.22)}
+  .ref2-pouch:before{top:12px;left:10px;right:10px;height:18px}.ref2-pouch span{font-size:37px;letter-spacing:-4px}.ref2-pouch strong{font-size:17px;margin-top:9px}.ref2-pouch small{font-size:8px;max-width:110px;margin-top:5px}.ref2-pouch em{font-size:7px}.ref2-pouch b{font-size:6px;margin-top:8px}
+  .ref2-info{padding:16px 10px 4px}.ref2-info>small{font-size:9px}.ref2-info h1{font-size:34px;line-height:1;margin:6px 0 7px;letter-spacing:-1.4px}.ref2-info h2{font-size:15px;line-height:1.25;margin-bottom:9px}.ref2-info>p{font-size:12px;line-height:1.42;margin:0}
+  .ref2-benefits{grid-template-columns:repeat(3,1fr);gap:5px;margin:15px 0}.ref2-benefits i{width:42px;height:42px;font-size:19px;margin-bottom:5px}.ref2-benefits b{font-size:10px;line-height:1.15}
+  .ref2-buy{margin:12px 0;gap:10px}.ref2-buy strong{font-size:26px}.ref2-buy span{font-size:10px}
+  .ref2-actions{gap:7px}.ref2-actions>div{height:40px}.ref2-actions>div button{width:34px;height:38px;font-size:19px}.ref2-actions>div b{padding:0 12px;font-size:12px}.ref2-actions .cart{height:40px;font-size:12px}
+  .ref2-trust{grid-template-columns:repeat(2,1fr);margin-top:12px;padding:9px;gap:6px;font-size:8px}
+  .ref2-ingredients,.ref2-learning,.ref2-bottom{grid-template-columns:1fr}
+  .ref2-ingredients{padding:17px 10px;gap:12px}.ref2-intro h2,.ref2-section-head h2,.ref2-spot h2,.ref2-how h2,.ref2-faq h2,.ref2-related h2{font-size:20px}.ref2-intro p,.ref2-section-head p,.ref2-spot>p,.ref2-how>p{font-size:10px}.ref2-intro button,.ref2-section-head button{padding:8px 12px;font-size:10px}
+  .ref2-photo-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;overflow:visible}.ref2-photo-row>div:before{width:48px;height:46px}.ref2-photo-row b{font-size:8px}.ref2-photo-row small{font-size:7px;line-height:1.1;display:block}
+  .ref2-inside{padding:17px 10px}.ref2-section-head{align-items:flex-start;display:block}.ref2-section-head button{margin-top:7px}.ref2-groups{grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}.ref2-groups article{min-height:116px;padding:9px;border-radius:9px}.ref2-groups article small{font-size:9px}.ref2-group-photos{height:45px}.ref2-group-photos:before{height:43px;background-size:31px 31px,31px 31px,31px 31px}.ref2-groups article>b{font-size:8px;line-height:1.2;display:block}.ref2-groups article>p{font-size:8px;line-height:1.25;margin-top:3px}
+  .ref2-learning{gap:9px;padding:0 10px 16px}.ref2-spot,.ref2-how{padding:11px}.ref2-spot-card{grid-template-columns:28px 76px minmax(0,1fr) 28px;gap:5px;padding-top:7px}.ref2-spot-card:before{width:76px;height:82px}.ref2-spot-card>button{width:27px;height:27px;font-size:17px}.ref2-spot-card h3{font-size:12px;margin-bottom:4px}.ref2-spot-card p{font-size:8px;line-height:1.25}.ref2-spot-card span{font-size:7px;margin-top:3px}.ref2-spot-card span small{font-size:7px}
+  .ref2-how>div{grid-template-columns:repeat(2,1fr);gap:6px}.ref2-how i{width:38px;height:38px;font-size:17px}.ref2-how b{font-size:9px}.ref2-how p{font-size:8px;line-height:1.25}
+  .ref2-bottom{gap:9px;padding:0 10px}.ref2-faq,.ref2-related{padding:11px}.ref2-faq-row button{padding:9px 2px;font-size:10px}.ref2-faq-row p{font-size:9px;margin-bottom:8px}.ref2-related>div{grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}.ref2-related-image{height:92px}.ref2-related-image .ref2-pouch{width:62px;height:80px;padding:6px}.ref2-related-image .ref2-pouch span{font-size:18px}.ref2-related-image .ref2-pouch strong{font-size:8px}.ref2-related article>b{font-size:9px}.ref2-related article small{font-size:7px}.ref2-related article>strong{font-size:11px}.ref2-related article>button{padding:6px 3px;font-size:8px}
+  .ref2-close{top:61px;right:10px;width:34px;height:34px;font-size:20px}
+}
+@media(max-width:380px){.ref2-main-photo{height:285px}.ref2-pouch{width:140px;height:225px}.ref2-overlay-pouch{inset:7% 16% 1%}.ref2-info h1{font-size:30px}.ref2-benefits b{font-size:9px}.ref2-groups article{min-height:110px}.ref2-photo-row b{font-size:7px}}
