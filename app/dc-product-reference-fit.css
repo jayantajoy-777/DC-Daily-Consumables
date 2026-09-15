@@ -1,0 +1,34 @@
+/* Reference-locked product page: tuned to the supplied 1024x1536 composition. */
+.dc-ref2{background:#f8f9f7}
+.dc-ref2 header{height:48px;padding:0 32px}
+.ref2-brand{min-width:220px;gap:7px}.ref2-brand b{font-size:32px;letter-spacing:-4px}.ref2-brand span{font-size:8px}
+.dc-ref2 nav{gap:30px}.dc-ref2 nav button{font-size:11px}.ref2-icons{gap:15px}.ref2-icons button{font-size:20px}
+.dc-ref2 main{max-width:1024px;padding:0 28px 28px}
+.ref2-crumb{padding:11px 4px;font-size:11px}
+.ref2-hero{grid-template-columns:1.08fr .92fr;gap:28px;padding:0 0 20px}
+.ref2-gallery{grid-template-columns:58px 1fr;gap:10px}
+.ref2-thumbs{gap:6px}.ref2-thumbs img{width:58px;height:58px;border-radius:6px}
+.ref2-main-photo{height:442px;border-radius:8px}
+.ref2-overlay-pouch{inset:5% 16% 1%}
+.ref2-pouch{width:228px;height:350px;border-radius:14px 14px 22px 22px;padding:26px;box-shadow:0 24px 42px rgba(18,24,22,.22),inset 0 1px 0 rgba(255,255,255,.9)}
+.ref2-pouch:before{top:16px;left:13px;right:13px;height:25px}
+.ref2-pouch span{font-size:50px}.ref2-pouch strong{font-size:23px}
+.ref2-info{padding:2px 12px 0 0}.ref2-info>small{font-size:10px}.ref2-info h1{font-size:43px;margin:7px 0}.ref2-info h2{font-size:17px;margin-bottom:12px}.ref2-info>p{font-size:13px;line-height:1.4}
+.ref2-benefits{margin:18px 0;gap:8px}.ref2-benefits i{width:48px;height:48px;font-size:22px;margin-bottom:7px}.ref2-benefits b{font-size:12px}
+.ref2-buy{margin:16px 0;gap:16px}.ref2-buy strong{font-size:28px}.ref2-buy span{font-size:12px}
+.ref2-actions>div{height:42px}.ref2-actions>div button{height:40px;width:39px}.ref2-actions>div b{padding:0 17px}.ref2-actions .cart{font-size:14px}
+.ref2-trust{margin-top:17px;padding:12px;gap:7px;font-size:9px}
+.ref2-ingredients{grid-template-columns:240px 1fr;gap:22px;padding:22px 16px}
+.ref2-intro h2,.ref2-section-head h2,.ref2-spot h2,.ref2-how h2,.ref2-faq h2,.ref2-related h2{font-size:21px}
+.ref2-intro p,.ref2-section-head p,.ref2-spot>p,.ref2-how>p{font-size:11px}
+.ref2-photo-row{gap:12px}.ref2-photo-row>div:before{width:58px;height:54px}.ref2-photo-row b{font-size:11px}.ref2-photo-row small{font-size:9px}
+.ref2-inside{padding:20px 16px}.ref2-groups{gap:9px;margin-top:11px}.ref2-groups article{min-height:145px;padding:11px}.ref2-group-photos{height:62px}.ref2-group-photos:before{height:58px;background-size:48px 48px,48px 48px,48px 48px}.ref2-groups article>b{font-size:11px}.ref2-groups article>p{font-size:10px}
+.ref2-learning{gap:12px;padding:0 16px 20px}.ref2-spot,.ref2-how{padding:13px}.ref2-spot-card{grid-template-columns:32px 105px 1fr 32px;gap:7px;padding-top:9px}.ref2-spot-card:before{width:105px;height:110px}.ref2-spot-card>button{width:30px;height:30px;font-size:19px}.ref2-spot-card h3{font-size:14px}.ref2-spot-card p{font-size:10px}.ref2-spot-card span{font-size:9px;margin-top:5px}
+.ref2-how>div{gap:6px}.ref2-how i{width:44px;height:44px;font-size:20px}.ref2-how b{font-size:11px}.ref2-how p{font-size:9px}
+.ref2-bottom{gap:12px;padding:0 16px}.ref2-faq,.ref2-related{padding:13px}.ref2-faq-row button{padding:10px 2px;font-size:11px}.ref2-faq-row p{font-size:10px}
+.ref2-related-image{height:105px}.ref2-related-image .ref2-pouch{width:75px;height:98px;padding:8px}.ref2-related article>b{font-size:10px}.ref2-related article small{font-size:8px}.ref2-related article>strong{font-size:13px}.ref2-related article>button{padding:6px;font-size:9px}
+/* Mockup treatment: make the temporary CSS pouch read like a photographed product mockup. */
+.ref2-overlay-pouch .ref2-pouch{transform:translateY(2px);background:linear-gradient(145deg,#fff 0%,#f4f2ec 48%,#dedbd3 100%)}
+.ref2-related-image .ref2-pouch{background:linear-gradient(145deg,#fff,#e9e6de);box-shadow:0 12px 22px rgba(0,0,0,.18)}
+@media(max-width:900px){.dc-ref2 main{max-width:760px;padding-left:18px;padding-right:18px}.dc-ref2 header{padding:0 16px}.ref2-main-photo{height:410px}}
+@media(max-width:600px){.dc-ref2 header{height:56px}.dc-ref2 main{padding:0 12px 24px}.ref2-crumb{padding:9px 2px}.ref2-main-photo{height:350px}.ref2-overlay-pouch{inset:7% 14% 2%}.ref2-pouch{width:185px;height:285px}.ref2-info h1{font-size:35px}.ref2-ingredients,.ref2-learning,.ref2-bottom{grid-template-columns:1fr}.ref2-photo-row{grid-template-columns:repeat(5,1fr);overflow:visible}.ref2-groups{grid-template-columns:1fr 1fr}}
