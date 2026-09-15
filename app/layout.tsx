@@ -15,6 +15,7 @@ import './dc-product-details.css';
 import './dc-product-reference.css';
 import './dc-collection-interactive.css';
 import './dc-ingredient-icons.css';
+import './dc-product-reference-fit.css';
 import HeroShowcase from './components/HeroShowcase';
 import DCProductDetailsReference from './components/DCProductDetailsReference';
 import DCCollectionInteractive from './components/DCCollectionInteractive';
